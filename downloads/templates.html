@@ -1,0 +1,2538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Graphic Design Templates | Starford Tech Graphics</title>
+    <meta name="description" content="Explore our premium collection of graphic design templates including flyers, logos, mockups, posters, calendars and more. Download professionally designed templates for all your creative projects.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/starford-tech-box-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <style>
+        /* ===== Global Variables & Reset ===== */
+        /* ===== Global Variables & Reset ===== */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a0ca3;
+  --primary-light: #4895ef;
+  --secondary: #f72585;
+  --accent: #4cc9f0;
+  --dark: #1a1a2e;
+  --dark-gray: #333;
+  --medium-gray: #666;
+  --light-gray: #e0e0e0;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --success: #38b000;
+  --warning: #ff9e00;
+  --danger: #ef233c;
+
+  --header-height: 80px;
+  --border-radius: 12px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Utility Classes ===== */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+.section-title p {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: #d91a6a;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+/* ===== Header & Navigation ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--white);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  color: maroon;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: rgb(0, 0, 171);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  margin-right: 25px;
+}
+
+.nav-links li {
+  position: relative;
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+.nav-links li a i {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+/* Enhanced Dropdown Menu - Graphics Design Focus */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition);
+  z-index: 100;
+}
+
+.dropdown-side {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: var(--white);
+  width: 220px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: var(--transition);
+  z-index: 100;
+}
+
+/* Desktop Hover Effects */
+@media (min-width: 993px) {
+  .nav-links li:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu li:hover > .dropdown-side {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-links li:hover > a i.fa-chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu li:hover > a i.fa-chevron-right {
+    transform: rotate(90deg);
+  }
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.dropdown-menu li a {
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dark-gray);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.dropdown-menu li a:hover {
+  color: var(--primary);
+  background: rgba(67, 97, 238, 0.05);
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Search & Auth */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  margin-right: 20px;
+}
+
+.search-box input {
+  padding: 10px 15px 10px 40px;
+  border: 1px solid var(--light-gray);
+  border-radius: 90px;
+  outline: none;
+  width: 200px;
+  transition: var(--transition);
+}
+
+.search-box input:focus {
+  border-color: var(--primary);
+  width: 250px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--medium-gray);
+}
+
+.header-action-btns {
+  display: flex;
+  gap: 10px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100vh;
+  background: var(--white);
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: var(--transition);
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.mobile-nav-links li {
+  margin-bottom: 15px;
+}
+
+.mobile-nav-links li a {
+  display: block;
+  padding: 12px 0;
+  font-weight: 600;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.mobile-dropdown {
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-dropdown.active {
+  max-height: 500px;
+}
+
+.mobile-dropdown li a {
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.mobile-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+        
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==');
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-btns .btn {
+            background: var(--white);
+            color: var(--primary);
+            min-width: 180px;
+        }
+        
+        .hero-btns .btn-outline {
+            background: transparent;
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .hero-btns .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-btns .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Hero Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            bottom: -50px;
+            width: 500px;
+            animation: float 6s ease-in-out infinite;
+            display: none; /* Hidden on mobile */
+        }
+        
+        /* ===== Templates Section ===== */
+        .templates-section {
+            padding: 80px 0;
+        }
+        
+        .template-category {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .category-header h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .category-header h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .category-header .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        
+        .templates-slider {
+            position: relative;
+            padding: 0 40px;
+        }
+        
+        .template-slide {
+            padding: 0 15px;
+            transition: var(--transition);
+        }
+        
+        .template-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .template-img {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .template-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .template-card:hover .template-img img {
+            transform: scale(1.1);
+        }
+        
+        .template-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .template-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(67, 97, 238, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .template-card:hover .template-overlay {
+            opacity: 1;
+        }
+        
+        .template-overlay .btn {
+            margin: 5px 0;
+            width: 150px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        
+        .template-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .template-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .template-content p {
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+        
+        .template-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .template-price {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .template-rating {
+            color: var(--warning);
+        }
+        
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: var(--box-shadow);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            color: var(--dark);
+        }
+        
+        .slick-arrow:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .slick-prev {
+            left: -10px;
+        }
+        
+        .slick-next {
+            right: -10px;
+        }
+        
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            list-style: none;
+        }
+        
+        .slick-dots li {
+            margin: 0 5px;
+        }
+        
+        .slick-dots button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            border: none;
+            font-size: 0;
+            padding: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slick-dots .slick-active button {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Featured Templates Section */
+        .featured-templates {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-templates::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+        }
+        
+        .featured-templates::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+        }
+        
+        .featured-slider {
+            margin-top: 50px;
+        }
+        
+        .featured-slide {
+            padding: 0 15px;
+        }
+        
+        .featured-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .featured-img {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-card:hover .featured-img img {
+            transform: scale(1.05);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .featured-content {
+            padding: 25px;
+        }
+        
+        .featured-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .featured-content p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .featured-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .featured-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .featured-rating {
+            color: var(--warning);
+        }
+        
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .category-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .category-card p {
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .category-count {
+            background: var(--primary-light);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
+        /* ===== Newsletter ===== */
+        .newsletter {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            padding: 70px 40px;
+            border-radius: var(--border-radius);
+            margin: 80px auto;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            padding: 0 30px;
+            background: var(--dark);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .newsletter-form button:hover {
+            background: #111;
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%231a1a2e" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%231a1a2e" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%231a1a2e"/></svg>');
+            background-size: cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: var(--accent);
+        }
+        
+        /* ===== Back to Top Button ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-image {
+                width: 400px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .search-box {
+                display: none;
+            }
+            
+            .hero-image {
+                display: none;
+            }
+            
+            .featured-img {
+                height: 250px;
+            }
+            
+            .templates-slider {
+                padding: 0 20px;
+            }
+            
+            .slick-prev {
+                left: -5px;
+            }
+            
+            .slick-next {
+                right: -5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .newsletter-form input {
+                border-radius: var(--border-radius);
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: var(--border-radius);
+                padding: 15px;
+                width: 100%;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .category-header .btn {
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .mobile-nav {
+                width: 280px;
+            }
+            
+            .featured-img {
+                height: 200px;
+            }
+            
+            .featured-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="/index.html" class="logo">
+                <img src="/assets/icons/starford.png" alt="Starford Tech Graphics Logo"> 
+                Starford<span>Tech</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="templates/index.html">Templates <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu dropdown">
+                            <li>
+                                <a href="templates/flyers/index.html">Flyers <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="templates/index.html#business-flyers">Business Flyers</a></li>
+                                    <li><a href="templates/index.html#event-flyers">Event Flyers</a></li>
+                                    <li><a href="templates/index.html#sale-flyers">Sale Flyers</a></li>
+                                    <li><a href="templates/index.html#real-estate-flyers">Real Estate</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="templates/logos/index.html">Logos <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="templates.html#business-logos">Business Logos</a></li>
+                                    <li><a href="templates.html#creative-logos">Creative Logos</a></li>
+                                    <li><a href="templates.html#minimal-logos">Minimal Logos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="templates/mockups/index.html">Mockups <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="templates.html#device-mockups">Device Mockups</a></li>
+                                    <li><a href="templates.html#branding-mockups">Branding Mockups</a></li>
+                                    <li><a href="templates.html#product-mockups">Product Mockups</a></li>
+                                </ul>
+                            </li>
+                                <li><a href="templates/posters/index.html">Posters</a></li>
+                                <li><a href="templates/calendars/index.html">Calendars</a></li>
+                                <li><a href="templates/business-cards/index.html">Business Cards</a></li>
+                                <li><a href="templates/social-media/index.html">Social Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="downloads/index.html">Downloads <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="branding.html"><i class="fas fa-palette"></i> Branding</a></li>
+                            <li><a href="print-design.html"><i class="fas fa-print"></i> Print Design</a></li>
+                            <li><a href="digital-design.html"><i class="fas fa-laptop-code"></i> Digital Design</a></li>
+                            <li><a href="packaging.html"><i class="fas fa-box-open"></i> Packaging</a></li>
+                            <li><a href="ui-ux.html"><i class="fas fa-mobile-alt"></i> UI/UX Design</a></li>
+                            <li><a href="motion-graphics.html"><i class="fas fa-film"></i> Motion Graphics</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="resources.html"><i class="fas fa-video"></i> Tutorials</a></li>
+                            <li><a href="downloads/templates.html"><i class="fas fa-file-download"></i> Templates</a></li>
+                            <li><a href="fonts.html"><i class="fas fa-font"></i> Fonts</a></li>
+                            <li><a href="color-palettes.html"><i class="fas fa-palette"></i> Color Palettes</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Design Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search tutorials...">
+                    </div>
+                    <div class="header-action-btns">
+                        <a href="sign-up.html" class="btn btn-bg">Sign-up</a>
+                        <a href="login.html" class="btn btn-outline">Login</a>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">Starford Tech</a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Templates <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu mobile-dropdown">
+                    <li>
+                        <a href="templates.html#flyers">Flyers <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#business-flyers">Business Flyers</a></li>
+                            <li><a href="templates.html#event-flyers">Event Flyers</a></li>
+                            <li><a href="templates.html#sale-flyers">Sale Flyers</a></li>
+                            <li><a href="templates.html#real-estate-flyers">Real Estate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates.html#logos">Logos <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#business-logos">Business Logos</a></li>
+                            <li><a href="templates.html#creative-logos">Creative Logos</a></li>
+                            <li><a href="templates.html#minimal-logos">Minimal Logos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates.html#mockups">Mockups <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#device-mockups">Device Mockups</a></li>
+                            <li><a href="templates.html#branding-mockups">Branding Mockups</a></li>
+                            <li><a href="templates.html#product-mockups">Product Mockups</a></li>
+                        </ul>
+                    </li>
+                        <li><a href="templates.html#posters">Posters</a></li>
+                        <li><a href="templates.html#calendars">Calendars</a></li>
+                        <li><a href="templates.html#business-cards">Business Cards</a></li>
+                        <li><a href="templates.html#social-media">Social Media</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Services</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="print-design.html">Print Design</a></li>
+                    <li><a href="digital-design.html">Digital Design</a></li>
+                    <li><a href="packaging.html">Packaging</a></li>
+                    <li><a href="ui-ux.html">UI/UX Design</a></li>
+                    <li><a href="motion-graphics.html">Motion Graphics</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Resources</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="resources.html">Tutorials</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="fonts.html">Fonts</a></li>
+                    <li><a href="color-palettes.html">Color Palettes</a></li>
+                    <li><a href="blog.html">Design Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Premium Graphic Design Templates</h1>
+            <p>Discover our professionally designed templates to kickstart your creative projects. Save time and create stunning visuals with our ready-to-use designs.</p>
+            <div class="hero-btns">
+                <a href="#categories" class="btn">Explore Categories</a>
+                <a href="#featured" class="btn btn-outline">View Featured</a>
+            </div>
+        </div>
+        
+        <img src="hero-templates.png" alt="Graphic design templates illustration" class="hero-image">
+    </section>
+
+    <!-- Featured Templates -->
+    <section class="section featured-templates" id="featured">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Featured Templates</h2>
+                <p>Our most popular and recently added design templates</p>
+            </div>
+            
+            <div class="featured-slider" data-aos="fade-up">
+                <div class="featured-slide">
+                    <div class="featured-card">
+                        <div class="featured-img">
+                            <img src="featured-template-1.jpg" alt="Business Flyer Template">
+                            <span class="featured-badge">New</span>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Modern Business Flyer Pack</h3>
+                            <p>Professional flyer templates for corporate events, product launches, and business promotions.</p>
+                            <div class="featured-meta">
+                                <div class="featured-price">$29.99</div>
+                                <div class="featured-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(42)</span>
+                                </div>
+                            </div>
+                            <div class="featured-btns" style="margin-top: 20px; display: flex; gap: 10px;">
+                                <a href="template-details.html" class="btn" style="flex: 1;">View Details</a>
+                                <a href="#" class="btn btn-outline" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-slide">
+                    <div class="featured-card">
+                        <div class="featured-img">
+                            <img src="featured-template-2.jpg" alt="Logo Template Pack">
+                            <span class="featured-badge">Best Seller</span>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Minimal Logo Template Collection</h3>
+                            <p>100+ customizable logo templates for various industries with vector source files.</p>
+                            <div class="featured-meta">
+                                <div class="featured-price">$49.99</div>
+                                <div class="featured-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(128)</span>
+                                </div>
+                            </div>
+                            <div class="featured-btns" style="margin-top: 20px; display: flex; gap: 10px;">
+                                <a href="template-details.html" class="btn" style="flex: 1;">View Details</a>
+                                <a href="#" class="btn btn-outline" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-slide">
+                    <div class="featured-card">
+                        <div class="featured-img">
+                            <img src="featured-template-3.jpg" alt="Social Media Kit">
+                            <span class="featured-badge">Popular</span>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Social Media Content Kit</h3>
+                            <p>Complete set of templates for Instagram, Facebook, Twitter, and LinkedIn with editable layers.</p>
+                            <div class="featured-meta">
+                                <div class="featured-price">$39.99</div>
+                                <div class="featured-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(96)</span>
+                                </div>
+                            </div>
+                            <div class="featured-btns" style="margin-top: 20px; display: flex; gap: 10px;">
+                                <a href="template-details.html" class="btn" style="flex: 1;">View Details</a>
+                                <a href="#" class="btn btn-outline" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-slide">
+                    <div class="featured-card">
+                        <div class="featured-img">
+                            <img src="featured-template-4.jpg" alt="Brand Identity Kit">
+                            <span class="featured-badge">Premium</span>
+                        </div>
+                        <div class="featured-content">
+                            <h3>Complete Brand Identity Pack</h3>
+                            <p>Everything you need for a professional brand identity including logo, business cards, and stationery.</p>
+                            <div class="featured-meta">
+                                <div class="featured-price">$79.99</div>
+                                <div class="featured-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(64)</span>
+                                </div>
+                            </div>
+                            <div class="featured-btns" style="margin-top: 20px; display: flex; gap: 10px;">
+                                <a href="template-details.html" class="btn" style="flex: 1;">View Details</a>
+                                <a href="#" class="btn btn-outline" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="featured-slide">
+                    <div class="featured-card">
+                        <div class="featured-img">
+                            <img src="featured-template-5.jpg" alt="Product Mockup Bundle">
+                            <span class="featured-badge">New</span>
+                        </div>
+                        <div class="featured-content">
+                            <h3>3D Product Mockup Bundle</h3>
+                            <p>High-quality PSD mockups for packaging, apparel, and tech products with smart layers.</p>
+                            <div class="featured-meta">
+                                <div class="featured-price">$59.99</div>
+                                <div class="featured-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(37)</span>
+                                </div>
+                            </div>
+                            <div class="featured-btns" style="margin-top: 20px; display: flex; gap: 10px;">
+                                <a href="template-details.html" class="btn" style="flex: 1;">View Details</a>
+                                <a href="#" class="btn btn-outline" style="flex: 1;"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates by Category -->
+    <section class="section templates-section" id="categories">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Templates by Category</h2>
+                <p>Browse our extensive collection of professional design templates</p>
+            </div>
+            
+            <!-- Flyers Templates -->
+            <div class="template-category" data-aos="fade-up">
+                <div class="category-header">
+                    <h3>Flyer Templates</h3>
+                    <a href="flyer-templates.html" class="btn btn-outline">View All Flyers</a>
+                </div>
+                
+                <div class="templates-slider">
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="flyer-template-1.jpg" alt="Event Flyer Template">
+                                <span class="template-badge">Popular</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Modern Event Flyer</h4>
+                                <p>Clean and professional flyer template for concerts, parties and special events.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$14.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="flyer-template-2.jpg" alt="Business Flyer Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Corporate Business Flyer</h4>
+                                <p>Elegant flyer design for corporate events, seminars and business promotions.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$12.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="flyer-template-3.jpg" alt="Sale Flyer Template">
+                                <span class="template-badge">New</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Retail Sale Flyer</h4>
+                                <p>Eye-catching flyer template for retail sales, discounts and special offers.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$11.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="flyer-template-4.jpg" alt="Restaurant Flyer Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Restaurant Menu Flyer</h4>
+                                <p>Appetizing flyer template for restaurants, cafes and food businesses.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$13.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="flyer-template-5.jpg" alt="Music Flyer Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Music Concert Flyer</h4>
+                                <p>Vibrant flyer template for music events, DJ nights and club parties.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$10.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logo Templates -->
+            <div class="template-category" data-aos="fade-up">
+                <div class="category-header">
+                    <h3>Logo Templates</h3>
+                    <a href="logo-templates.html" class="btn btn-outline">View All Logos</a>
+                </div>
+                
+                <div class="templates-slider">
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="logo-template-1.jpg" alt="Minimal Logo Template">
+                                <span class="template-badge">Bestseller</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Minimal Logo Collection</h4>
+                                <p>50+ clean and modern logo templates for various industries.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$39.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="logo-template-2.jpg" alt="Vintage Logo Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Vintage Badge Logos</h4>
+                                <p>Classic badge-style logo templates with retro appeal.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$29.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="logo-template-3.jpg" alt="Mascot Logo Template">
+                                <span class="template-badge">New</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Mascot Logo Pack</h4>
+                                <p>Character-based logo templates for sports teams and brands.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$34.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="logo-template-4.jpg" alt="Luxury Logo Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Luxury Brand Logos</h4>
+                                <p>Premium logo designs for high-end brands and businesses.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$44.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="logo-template-5.jpg" alt="Tech Logo Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Tech Startup Logos</h4>
+                                <p>Modern and futuristic logo designs for technology companies.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$32.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mockup Templates -->
+            <div class="template-category" data-aos="fade-up">
+                <div class="category-header">
+                    <h3>Mockup Templates</h3>
+                    <a href="mockup-templates.html" class="btn btn-outline">View All Mockups</a>
+                </div>
+                
+                <div class="templates-slider">
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="mockup-template-1.jpg" alt="Packaging Mockup">
+                                <span class="template-badge">Popular</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Product Packaging Mockups</h4>
+                                <p>High-quality 3D mockups for boxes, bags and product packaging.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$24.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="mockup-template-2.jpg" alt="Apparel Mockup">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>T-Shirt & Apparel Mockups</h4>
+                                <p>Realistic mockups for t-shirts, hoodies and clothing items.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$19.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="mockup-template-3.jpg" alt="Device Mockup">
+                                <span class="template-badge">New</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Device Screen Mockups</h4>
+                                <p>Smartphone, tablet and laptop mockups for app and web designs.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$27.99</div>                                                                <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="mockup-template-4.jpg" alt="Stationery Mockup">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Business Stationery Mockups</h4>
+                                <p>Professional mockups for business cards, letterheads and envelopes.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$21.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="mockup-template-5.jpg" alt="Billboard Mockup">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Outdoor Advertising Mockups</h4>
+                                <p>Realistic mockups for billboards, banners and signage designs.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$29.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Poster Templates -->
+            <div class="template-category" data-aos="fade-up">
+                <div class="category-header">
+                    <h3>Poster Templates</h3>
+                    <a href="poster-templates.html" class="btn btn-outline">View All Posters</a>
+                </div>
+                
+                <div class="templates-slider">
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="poster-template-1.jpg" alt="Music Poster Template">
+                                <span class="template-badge">Popular</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Music Festival Poster</h4>
+                                <p>Vibrant poster template for concerts, festivals and music events.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$14.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="poster-template-2.jpg" alt="Movie Poster Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Cinematic Movie Poster</h4>
+                                <p>Dramatic poster template for films, TV shows and entertainment.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$16.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="poster-template-3.jpg" alt="Art Poster Template">
+                                <span class="template-badge">New</span>
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Art Exhibition Poster</h4>
+                                <p>Creative poster template for art shows, galleries and museums.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$15.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="poster-template-4.jpg" alt="Fitness Poster Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Fitness & Gym Poster</h4>
+                                <p>Energetic poster template for sports events and fitness centers.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$13.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="template-slide">
+                        <div class="template-card">
+                            <div class="template-img">
+                                <img src="poster-template-5.jpg" alt="Business Poster Template">
+                                <div class="template-overlay">
+                                    <a href="template-details.html" class="btn">View Details</a>
+                                    <a href="#" class="btn btn-outline">Preview</a>
+                                </div>
+                            </div>
+                            <div class="template-content">
+                                <h4>Corporate Business Poster</h4>
+                                <p>Professional poster template for conferences and corporate events.</p>
+                                <div class="template-meta">
+                                    <div class="template-price">$17.99</div>
+                                    <div class="template-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>More Template Categories</h2>
+                <p>Explore our wide range of design template categories</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Calendar Templates</h3>
+                    <p>Beautifully designed calendars for personal and business use.</p>
+                    <span class="category-count">48 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Ticket Templates</h3>
+                    <p>Professional designs for event tickets, passes and invitations.</p>
+                    <span class="category-count">32 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certificate Templates</h3>
+                    <p>Elegant certificate designs for awards and achievements.</p>
+                    <span class="category-count">25 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Brochure Templates</h3>
+                    <p>Tri-fold and multi-page brochure designs for businesses.</p>
+                    <span class="category-count">56 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Newsletter Templates</h3>
+                    <p>Professional newsletter designs for email and print distribution.</p>
+                    <span class="category-count">42 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Gift Certificate Templates</h3>
+                    <p>Attractive gift voucher designs for retail and services.</p>
+                    <span class="category-count">38 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Invoice Templates</h3>
+                    <p>Clean and professional invoice designs for businesses.</p>
+                    <span class="category-count">29 Templates</span>
+                </div>
+                
+                <div class="category-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Infographic Templates</h3>
+                    <p>Data visualization templates for presentations and reports.</p>
+                    <span class="category-count">64 Templates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container">
+        <div class="newsletter" data-aos="fade-up">
+            <div class="newsletter-content">
+                <h2>Get Design Resources & Updates</h2>
+                <p>Subscribe to our newsletter and receive free templates, design tips, and special offers straight to your inbox.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Starford Tech</h3>
+                    <p>Providing premium graphic design templates and resources to help creatives and businesses achieve their goals.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Design Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Templates</h3>
+                    <ul>
+                        <li><a href="flyer-templates.html">Flyer Templates</a></li>
+                        <li><a href="logo-templates.html">Logo Templates</a></li>
+                        <li><a href="mockup-templates.html">Mockup Templates</a></li>
+                        <li><a href="poster-templates.html">Poster Templates</a></li>
+                        <li><a href="all-templates.html">All Templates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="licensing.html">Licensing</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund-policy.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, Creative City, CA 90210</p>
+                        <p><i class="fas fa-phone-alt"></i> +256 (770) 500-867</p>
+                        <p><i class="fas fa-envelope"></i> hello@starfordtech.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Starford Tech Graphics. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> by our creative team.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        
+        mobileNavToggle.addEventListener('click', () => {
+            const visibility = mobileNav.getAttribute('aria-expanded');
+            
+            if (visibility === 'false') {
+                mobileNav.setAttribute('aria-expanded', 'true');
+                mobileNav.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileNav.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Mobile Dropdown Toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+        
+        // Overlay Click
+        overlay.addEventListener('click', () => {
+            mobileNav.setAttribute('aria-expanded', 'false');
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Initialize Slick Sliders
+        $('.templates-slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        
+        $('.featured-slider').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            arrows: true,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        
+        // Search Functionality
+        const searchBox = document.querySelector('.search-box input');
+        
+        searchBox.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const searchTerm = searchBox.value.trim();
+                if (searchTerm) {
+                    window.location.href = `search.html?query=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

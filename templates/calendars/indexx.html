@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional graphic design services including branding, logo design, UI/UX, print materials, and digital graphics. Transform your vision into stunning visuals.">
+    <title>Calendar Designs - Starford Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/fav-icon-starford-tech-box-icon.png"> 
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/starford-tech-box-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+         :root {
+        --primary: #4361ee;
+        --primary-dark: #3a0ca3;
+        --primary-light: #4895ef;
+        --secondary: #f72585;
+        --accent: #4cc9f0;
+        --dark: #1a1a2e;
+        --dark-gray: #333;
+        --medium-gray: #666;
+        --light-gray: #e0e0e0;
+        --light: #f8f9fa;
+        --white: #ffffff;
+        --success: #38b000;
+        --warning: #ff9e00;
+        --danger: #ef233c;
+
+        --header-height: 80px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+         html {
+        scroll-behavior: smooth;
+      }
+        
+        body {
+             font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        }
+
+        
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+        /* ===== Utility Classes ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+        padding: 100px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--dark);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        font-size: 1.1rem;
+        color: var(--medium-gray);
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+        transition: var(--transition);
+        white-space: nowrap;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: var(--box-shadow);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .btn-secondary {
+        background: var(--secondary);
+      }
+
+      .btn-secondary:hover {
+        background: #d91a6a;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-primary {
+        color: var(--primary);
+      }
+        
+        /* ===== Header & Navigation ===== */
+         header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background-color: var(--white);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            height: 100%;
+            padding: 15px 0;
+
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            color: maroon;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+        color: rgb(0, 0, 171);
+      }
+
+      /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            position: relative;
+            margin-left: 15px;
+        }
+
+        .nav-links li a {
+        font-weight: 600;
+        font-size: 1rem;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+        
+      
+      .nav-links li a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links li a i {
+        margin-left: 5px;
+        font-size: 0.8rem;
+        transition: transform 0.3s;
+      }
+        
+       /* Enhanced Dropdown Menu - Graphics Design Focus */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            width: 220px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .dropdown-side {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        background: var(--white);
+        width: 220px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(10px);
+        transition: var(--transition);
+        z-index: 100;
+      }
+
+      /* Desktop Hover Effects */
+      @media (min-width: 993px) {
+        .nav-links li:hover > .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        .dropdown-menu li:hover > .dropdown-side {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(0);
+        }
+
+        .nav-links li:hover > a i.fa-chevron-down {
+          transform: rotate(180deg);
+        }
+
+        .dropdown-menu li:hover > a i.fa-chevron-right {
+          transform: rotate(90deg);
+        }
+      }
+        
+        /* .nav-links li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+         */
+        .dropdown-menu li {
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .dropdown-menu li a {
+        padding: 8px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--dark-gray);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+        
+        .dropdown-menu li a:hover {
+        color: var(--primary);
+        background: rgba(67, 97, 238, 0.05);
+      }
+
+       /* Mobile Navigation Toggle */
+      .mobile-nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--dark);
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      /* Search & Auth */
+      .header-actions {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-box {
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .search-box input {
+        padding: 10px 15px 10px 40px;
+        border: 1px solid var(--light-gray);
+        border-radius: 90px;
+        outline: none;
+        width: 200px;
+        transition: var(--transition);
+      }
+
+      .search-box input:focus {
+        border-color: var(--primary);
+        width: 250px;
+      }
+
+      .search-box i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--medium-gray);
+      }
+
+      .header-action-btns {
+        display: flex;
+        gap: 10px;
+      }
+/* 
+        
+        .dropdown-menu li:hover .dropdown-side {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        
+        .search-box {
+            position: relative;
+            margin-right: 15px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .search-box input {
+            padding: 8px 10px 8px 35px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        
+        .btn {
+            background-color: #4361ee;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #3a56d4;
+        }
+        
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+         */
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background-color: #fff;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            padding: 20px;
+        }
+        
+        .mobile-nav-links > li {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-nav-links a {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-dropdown-toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .mobile-dropdown {
+            padding-left: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.active {
+            max-height: 1000px;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Page Content */
+        .container h1 {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #4361ee;
+            color: white;
+            border-color: #4361ee;
+        }
+        
+        /* Calendar Grid */
+        .calendars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .calendar-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .calendar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .calendar-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #4361ee;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .calendar-info {
+            padding: 20px;
+        }
+        
+        .calendar-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .calendar-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            color: #777;
+            font-size: 0.85rem;
+        }
+        
+        .card-stat {
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-stat i {
+            margin-right: 5px;
+        }
+        
+        /* Modal Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1002;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 10;
+            color: #333;
+        }
+        
+        .modal-header {
+            position: relative;
+        }
+        
+        .modal-header img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .floating-actions {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: #fff;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .action-btn.active {
+            background-color: #4361ee;
+            color: white;
+        }
+        
+        .action-btn.like.active {
+            background-color: #e91e63;
+        }
+        
+        .action-btn.favorite.active {
+            background-color: #ff9800;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .modal-subtitle {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .modal-description {
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .design-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .detail-item h4 {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .detail-item p {
+            font-weight: 500;
+        }
+        
+        .color-palette {
+            margin-bottom: 30px;
+        }
+        
+        .color-palette h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .colors {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .color {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .color-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            margin-bottom: 5px;
+        }
+        
+        .color:hover .color-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .tag {
+            background-color: #f1f1f1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .related-designs h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+        }
+        
+        .related-item {
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .related-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .related-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .footer-wave {
+            height: 10px;
+            background: linear-gradient(90deg, #4361ee, #3a0ca3, #7209b7);
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 0;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #4361ee;
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #bbb;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: #4361ee;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #4361ee;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding: 20px 0;
+            text-align: center;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        .footer-bottom a:hover {
+            color: #4361ee;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #4361ee;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #3a56d4;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .header-actions {
+                margin-left: auto;
+            }
+            
+            .calendars-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .search-box {
+                display: none;
+            }
+            
+            .calendars-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .design-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-actions {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin: 15px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo span {
+                display: none;
+            }
+            
+            .filter-controls {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            
+            .modal-header img {
+                max-height: 250px;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img src="/assets/icons/starford.png" alt="Starford Tech Graphics Logo"> 
+               Starford <span>Tech</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="template.html">Templates <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu dropdown">
+                            <li>
+                                <a href="flyers.html">Flyers <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="template.html#business-flyers">Business Flyers</a></li>
+                                    <li><a href="template.html#event-flyers">Event Flyers</a></li>
+                                    <li><a href="template.html#sale-flyers">Sale Flyers</a></li>
+                                    <li><a href="template.html#real-estate-flyers">Real Estate</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="templates.html#logos">Logos <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="template.html#business-logos">Business Logos</a></li>
+                                    <li><a href="template.html#creative-logos">Creative Logos</a></li>
+                                    <li><a href="template.html#minimal-logos">Minimal Logos</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="template.html#mockups">Mockups <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="template.html#device-mockups">Device Mockups</a></li>
+                                    <li><a href="template.html#branding-mockups">Branding Mockups</a></li>
+                                    <li><a href="template.html#product-mockups">Product Mockups</a></li>
+                                </ul>
+                            </li>
+                                <li><a href="template.html#posters">Posters</a></li>
+                                <li><a href="template.html#calendars">Calendars</a></li>
+                                <li><a href="template.html#business-cards">Business Cards</a></li>
+                                <li><a href="template.html#social-media">Social Media</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="branding.html"><i class="fas fa-palette"></i> Branding</a></li>
+                            <li><a href="print-design.html"><i class="fas fa-print"></i> Print Design</a></li>
+                            <li><a href="digital-design.html"><i class="fas fa-laptop-code"></i> Digital Design</a></li>
+                            <li><a href="packaging.html"><i class="fas fa-box-open"></i> Packaging</a></li>
+                            <li><a href="ui-ux.html"><i class="fas fa-mobile-alt"></i> UI/UX Design</a></li>
+                            <li><a href="motion-graphics.html"><i class="fas fa-film"></i> Motion Graphics</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="portfolio.html">Portfolio <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="branding-portfolio.html">Branding <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="logo-design.html"><i class="fas fa-signature"></i> Logo Design</a></li>
+                                    <li><a href="business-cards.html"><i class="fas fa-address-card"></i> Business Cards</a></li>
+                                    <li><a href="brand-guidelines.html"><i class="fas fa-book"></i> Brand Guidelines</a></li>
+                                    <li><a href="stationery.html"><i class="fas fa-pen-fancy"></i> Stationery</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="print-portfolio.html">Print Design <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="brochures.html"><i class="fas fa-book-open"></i> Brochures</a></li>
+                                    <li><a href="flyers.html"><i class="fas fa-newspaper"></i> Flyers</a></li>
+                                    <li><a href="posters.html"><i class="fas fa-image"></i> Posters</a></li>
+                                    <li><a href="magazines.html"><i class="fas fa-book"></i> Magazines</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="digital-portfolio.html">Digital Design <i class="fas fa-chevron-right"></i></a>
+                                <ul class="dropdown-side">
+                                    <li><a href="social-media.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
+                                    <li><a href="web-banners.html"><i class="fas fa-window-maximize"></i> Web Banners</a></li>
+                                    <li><a href="email-templates.html"><i class="fas fa-envelope"></i> Email Templates</a></li>
+                                    <li><a href="digital-ads.html"><i class="fas fa-ad"></i> Digital Ads</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="all-portfolio.html">View All Work</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tutorials.html"><i class="fas fa-video"></i> Tutorials</a></li>
+                            <li><a href="template.html"><i class="fas fa-file-download"></i> Templates</a></li>
+                            <li><a href="fonts.html"><i class="fas fa-font"></i> Fonts</a></li>
+                            <li><a href="color-palettes.html"><i class="fas fa-palette"></i> Color Palettes</a></li>
+                            <li><a href="blog.html"><i class="fas fa-blog"></i> Design Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search designs...">
+                    </div>
+                    <a href="login.html" class="btn">Login</a>
+                    <a href="signUp.html" class="btn">SignUp</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">Starford <span>Tech</span></a>
+            <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Templates <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu mobile-dropdown">
+                    <li>
+                        <a href="templates.html#flyers">Flyers <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#business-flyers">Business Flyers</a></li>
+                            <li><a href="templates.html#event-flyers">Event Flyers</a></li>
+                            <li><a href="templates.html#sale-flyers">Sale Flyers</a></li>
+                            <li><a href="templates.html#real-estate-flyers">Real Estate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates.html#logos">Logos <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#business-logos">Business Logos</a></li>
+                            <li><a href="templates.html#creative-logos">Creative Logos</a></li>
+                            <li><a href="templates.html#minimal-logos">Minimal Logos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="templates.html#mockups">Mockups <i class="fas fa-chevron-right"></i></a>
+                        <ul class="dropdown-side">
+                            <li><a href="templates.html#device-mockups">Device Mockups</a></li>
+                            <li><a href="templates.html#branding-mockups">Branding Mockups</a></li>
+                            <li><a href="templates.html#product-mockups">Product Mockups</a></li>
+                        </ul>
+                    </li>
+                        <li><a href="templates.html#posters">Posters</a></li>
+                        <li><a href="templates.html#calendars">Calendars</a></li>
+                        <li><a href="templates.html#business-cards">Business Cards</a></li>
+                        <li><a href="templates.html#social-media">Social Media</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Services</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="print-design.html">Print Design</a></li>
+                    <li><a href="digital-design.html">Digital Design</a></li>
+                    <li><a href="packaging.html">Packaging</a></li>
+                    <li><a href="ui-ux.html">UI/UX Design</a></li>
+                    <li><a href="motion-graphics.html">Motion Graphics</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="portfolio.html">Portfolio</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="branding-portfolio.html">Branding</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="logo-design.html">Logo Design</a></li>
+                            <li><a href="business-cards.html">Business Cards</a></li>
+                            <li><a href="brand-guidelines.html">Brand Guidelines</a></li>
+                            <li><a href="stationery.html">Stationery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="print-portfolio.html">Print Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="brochures.html">Brochures</a></li>
+                            <li><a href="flyers.html">Flyers</a></li>
+                            <li><a href="posters.html">Posters</a></li>
+                            <li><a href="magazines.html">Magazines</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="digital-portfolio.html">Digital Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="social-media.html">Social Media</a></li>
+                            <li><a href="web-banners.html">Web Banners</a></li>
+                            <li><a href="email-templates.html">Email Templates</a></li>
+                            <li><a href="digital-ads.html">Digital Ads</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="all-portfolio.html">View All Work</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Resources</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="fonts.html">Fonts</a></li>
+                    <li><a href="color-palettes.html">Color Palettes</a></li>
+                    <li><a href="blog.html">Design Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signUp.html">SignUp</a></li>
+        </ul>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <h1>Calendar Designs</h1>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="wall">Wall Calendars</button>
+            <button class="filter-btn" data-filter="desk">Desk Calendars</button>
+            <button class="filter-btn" data-filter="digital">Digital Calendars</button>
+            <button class="filter-btn" data-filter="corporate">Corporate</button>
+            <button class="filter-btn" data-filter="creative">Creative</button>
+            <button class="filter-btn" data-filter="minimal">Minimal</button>
+            <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+
+        </div>
+        
+        <div class="calendars-grid">
+            <!-- Calendar 1 -->
+            <div class="calendar-card" data-project="1" data-category="wall creative">
+                <img src="https://images.unsplash.com/photo-1588964895594-b1d1ab0d4294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80" alt="Nature Wall Calendar">
+                <span class="card-badge">Wall</span>
+                <div class="calendar-info">
+                    <h3>Nature Wall Calendar</h3>
+                    <p>Beautiful landscape photography with clean monthly layout</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,542</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 428</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 2 -->
+            <div class="calendar-card" data-project="2" data-category="desk corporate">
+                <img src="https://images.unsplash.com/photo-1606595885348-ba54cca58a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Minimal Desk Calendar">
+                <span class="card-badge">Desk</span>
+                <div class="calendar-info">
+                    <h3>Minimal Desk Calendar</h3>
+                    <p>Clean design with focus on functionality and readability</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,235</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 387</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 3 -->
+            <div class="calendar-card" data-project="3" data-category="digital creative">
+                <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital Calendar App">
+                <span class="card-badge">Digital</span>
+                <div class="calendar-info">
+                    <h3>Digital Calendar App</h3>
+                    <p>Modern interface with seamless integration capabilities</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 2,154</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 672</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 4 -->
+            <div class="calendar-card" data-project="4" data-category="wall corporate">
+                <img src="https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Corporate Wall Calendar">
+                <span class="card-badge">Corporate</span>
+                <div class="calendar-info">
+                    <h3>Corporate Branded Calendar</h3>
+                    <p>Professional design with company branding elements</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 987</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 254</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 5 -->
+            <div class="calendar-card" data-project="5" data-category="desk creative">
+                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Creative Desk Calendar">
+                <span class="card-badge">Creative</span>
+                <div class="calendar-info">
+                    <h3>Creative Block Calendar</h3>
+                    <p>Unique tear-off design with inspirational quotes</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,643</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 512</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 6 -->
+            <div class="calendar-card" data-project="6" data-category="digital corporate">
+                <img src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Business Digital Calendar">
+                <span class="card-badge">Digital</span>
+                <div class="calendar-info">
+                    <h3>Business Planner Calendar</h3>
+                    <p>Integrated scheduling system with task management</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,876</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 543</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 7 -->
+            <div class="calendar-card" data-project="7" data-category="wall creative">
+                <img src="https://images.unsplash.com/photo-1516487200032-8532cb603261?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Artistic Wall Calendar">
+                <span class="card-badge">Creative</span>
+                <div class="calendar-info">
+                    <h3>Artistic Wall Calendar</h3>
+                    <p>Each month features original artwork from different artists</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 2,321</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 765</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 8 -->
+            <div class="calendar-card" data-project="8" data-category="desk corporate">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Executive Desk Calendar">
+                <span class="card-badge">Corporate</span>
+                <div class="calendar-info">
+                    <h3>Executive Desk Calendar</h3>
+                    <p>Premium materials with gold foil accents</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,098</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 321</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 9 -->
+            <div class="calendar-card" data-project="9" data-category="digital creative">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Minimal Digital Calendar">
+                <span class="card-badge">Digital</span>
+                <div class="calendar-info">
+                    <h3>Minimal Digital Calendar</h3>
+                    <p>Clean interface with focus on usability and aesthetics</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 2,543</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 876</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 10 -->
+            <div class="calendar-card" data-project="10" data-category="wall corporate">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Corporate Planning Calendar">
+                <span class="card-badge">Corporate</span>
+                <div class="calendar-info">
+                    <h3>Corporate Planning Calendar</h3>
+                    <p>Large format with space for team scheduling and notes</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,432</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 398</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 11 -->
+            <div class="calendar-card" data-project="11" data-category="desk creative">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Illustrated Desk Calendar">
+                <span class="card-badge">Creative</span>
+                <div class="calendar-info">
+                    <h3>Illustrated Desk Calendar</h3>
+                    <p>Hand-drawn illustrations with whimsical design elements</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 1,765</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 543</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Calendar 12 -->
+            <div class="calendar-card" data-project="12" data-category="digital corporate">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Business App Calendar">
+                <span class="card-badge">Digital</span>
+                <div class="calendar-info">
+                    <h3>Business App Calendar</h3>
+                    <p>Integrated calendar and productivity system for teams</p>
+                    <div class="card-stats">
+                        <div class="card-stat"><i class="fas fa-download"></i> 2,109</div>
+                        <div class="card-stat"><i class="fas fa-heart"></i> 654</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Calendar Design">
+                
+                <!-- Floating Action Buttons -->
+                <div class="floating-actions">
+                    <button class="action-btn like" id="likeBtn" title="Like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn download" id="downloadBtn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="action-btn favorite" id="favoriteBtn" title="Add to Favorites">
+                        <i class="fas fa-star"></i>
+                    </button>
+                    <button class="action-btn share" id="shareBtn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn expand" id="expandBtn" title="Expand">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle">Calendar Title</h2>
+                <p class="modal-subtitle" id="modalSubtitle">Calendar Subtitle</p>
+                
+                <p class="modal-description" id="modalDescription">Calendar description goes here...</p>
+                
+                <div class="design-details">
+                    <div class="detail-item">
+                        <h4>Calendar Type</h4>
+                        <p id="calendarType">Wall Calendar</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>File Format</h4>
+                        <p id="fileFormat">PDF, PNG, JPG</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Dimensions</h4>
+                        <p id="dimensions">11×17 in (300dpi)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Downloads</h4>
+                        <p id="downloadCount">1,245</p>
+                    </div>
+                </div>
+                
+                <div class="color-palette">
+                    <h3>Color Palette</h3>
+                    <div class="colors" id="colorPalette">
+                        <!-- Colors will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div class="tags" id="tagsContainer">
+                    <!-- Tags will be added dynamically -->
+                </div>
+                
+                <div class="related-designs">
+                    <h3>Related Calendars</h3>
+                    <div class="related-grid" id="relatedDesigns">
+                        <!-- Related designs will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Starford Tech Graphics</h3>
+                    <p style="color: #bbb; margin-bottom: 20px;">Transforming ideas into visually stunning designs that communicate, engage, and inspire.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="branding.html">Brand Identity</a></li>
+                        <li><a href="print-design.html">Print Design</a></li>
+                        <li><a href="digital-design.html">Digital Design</a></li>
+                        <li><a href="packaging.html">Packaging Design</a></li>
+                        <li><a href="ui-ux.html">UI/UX Design</a></li>
+                        <li><a href="motion-graphics.html">Motion Graphics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Design Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Design Ave, Creative District</p>
+                        <p><i class="fas fa-envelope"></i> hello@starfordtech.com</p>
+                        <p><i class="fas fa-phone-alt"></i> + (256) 770-500867</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Starford Tech Graphics. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Calendar data
+        const calendarsData = {
+            1: {
+                title: "Nature Wall Calendar",
+                subtitle: "Beautiful landscape photography with clean monthly layout",
+                description: "This stunning wall calendar features breathtaking nature photography from around the world. Each month showcases a different landscape, from majestic mountains to serene beaches. The clean layout provides ample space for noting important dates and events while keeping the focus on the beautiful imagery. Printed on high-quality paper with a glossy finish to make the colors pop.",
+                imageUrl: "https://images.unsplash.com/photo-1588964895594-b1d1ab0d4294?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80",
+                calendarType: "Wall Calendar",
+                fileFormat: "PDF, PNG, JPG",
+                dimensions: "11×17 in (300dpi)",
+                downloadCount: "1,542",
+                likes: 428,
+                colors: ["#2E8B57", "#4682B4", "#F5F5DC", "#000000", "#FFFFFF"],
+                colorNames: ["SeaGreen", "SteelBlue", "Beige", "Black", "White"],
+                tags: ["nature", "photography", "wall", "landscape", "minimal"],
+                related: [
+                    {id: 7, image: "https://images.unsplash.com/photo-1516487200032-8532cb603261?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80", title: "Artistic Wall"},
+                    {id: 4, image: "https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", title: "Corporate Wall"},
+                    {id: 10, image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80", title: "Planning Calendar"}
+                ]
+            },
+            2: {
+                title: "Minimal Desk Calendar",
+                subtitle: "Clean design with focus on functionality and readability",
+                description: "This elegant desk calendar features a minimalist design that prioritizes clarity and functionality. The clean typography and ample white space make it easy to read and use daily. The sturdy base keeps the calendar stable on any desk surface, while the thick, high-quality paper ensures durability throughout the year. Perfect for professionals who appreciate understated design.",
+                imageUrl: "https://images.unsplash.com/photo-1606595885348-ba54cca58a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+                calendarType: "Desk Calendar",
+                fileFormat: "PDF, AI, PNG",
+                dimensions: "5×5 in (300dpi)",
+                downloadCount: "1,235",
+                likes: 387,
+                colors: ["#FFFFFF", "#000000", "#F0F0F0", "#555555"],
+                colorNames: ["White", "Black", "Light Gray", "Dark Gray"],
+                tags: ["minimal", "desk", "professional", "clean", "functional"],
+                related: [
+                    {id: 8, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", title: "Executive Desk"},
+                    {id: 5, image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80", title: "Creative Block"},
+                    {id: 11, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Illustrated Desk"}
+                ]
+            },
+            3: {
+                title: "Digital Calendar App",
+                subtitle: "Modern interface with seamless integration capabilities",
+                description: "This digital calendar application features a sleek, modern interface designed for both beauty and functionality. With seamless integration across devices and platforms, it helps users stay organized with intuitive scheduling, reminders, and sharing capabilities. The clean design ensures information is easily accessible while maintaining visual appeal. Perfect for individuals and teams who need to coordinate schedules efficiently.",
+                imageUrl: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                calendarType: "Digital Calendar",
+                fileFormat: "SKETCH, FIGMA, XD",
+                dimensions: "Various screen sizes",
+                downloadCount: "2,154",
+                likes: 672,
+                colors: ["#4285F4", "#34A853", "#FBBC05", "#EA4335", "#F1F3F4"],
+                colorNames: ["Google Blue", "Google Green", "Google Yellow", "Google Red", "Light Gray"],
+                tags: ["digital", "app", "modern", "ui", "productivity"],
+                related: [
+                    {id: 9, image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", title: "Minimal Digital"},
+                    {id: 6, image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Business Planner"},
+                    {id: 12, image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Business App"}
+                ]
+            },
+            4: {
+                title: "Corporate Branded Calendar",
+                subtitle: "Professional design with company branding elements",
+                description: "This corporate calendar is designed specifically for businesses looking to maintain brand consistency while providing practical functionality. It features the company's logo, colors, and visual identity throughout the design. The layout includes space for important company dates, holidays, and milestones. Perfect for client gifts, employee appreciation, or office use, this calendar reinforces brand recognition all year long.",
+                imageUrl: "https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                calendarType: "Wall Calendar",
+                fileFormat: "AI, PDF, INDD",
+                dimensions: "11×17 in (300dpi)",
+                downloadCount: "987",
+                likes: 254,
+                colors: ["#1E3A8A", "#DC2626", "#FBBF24", "#FFFFFF", "#000000"],
+                colorNames: ["Navy Blue", "Red", "Yellow", "White", "Black"],
+                tags: ["corporate", "branded", "professional", "business", "wall"],
+                related: [
+                    {id: 10, image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80", title: "Planning Calendar"},
+                    {id: 8, image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80", title: "Executive Desk"},
+                    {id: 6, image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Business Planner"}
+                ]
+            },
+            5: {
+                title: "Creative Block Calendar",
+                subtitle: "Unique tear-off design with inspirational quotes",
+                description: "This innovative desk calendar features a unique block design where each day is its own tear-off sheet. Every page includes an inspirational quote or thought-provoking message to start your day with motivation. The cube-shaped design makes it a conversation piece on any desk, while the thick paper ensures clean tearing and durability. Perfect for those who appreciate both function and inspiration in their daily routine.",
+                imageUrl: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80",
+                calendarType: "Desk Calendar",
+                fileFormat: "PDF, AI, PSD",
+                dimensions: "3×3 in (300dpi)",
+                downloadCount: "1,643",
+                likes: 512,
+                colors: ["#F97316", "#F59E0B", "#FDE68A", "#78350F", "#FFFFFF"],
+                colorNames: ["Orange", "Amber", "Light Yellow", "Brown", "White"],
+                tags: ["creative", "block", "desk", "inspirational", "unique"],
+                related: [
+                    {id: 11, image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Illustrated Desk"},
+                    {id: 2, image: "https://images.unsplash.com/photo-1606595885348-ba54cca58a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80", title: "Minimal Desk"},
+                    {id: 7, image: "https://images.unsplash.com/photo-1516487200032-8532cb603261?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80", title: "Artistic Wall"}
+                ]
+            }
+        };
+
+        // DOM Elements
+        const modal = document.getElementById('projectModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const calendarCards = document.querySelectorAll('.calendar-card');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const calendarType = document.getElementById('calendarType');
+        const fileFormat = document.getElementById('fileFormat');
+        const dimensions = document.getElementById('dimensions');
+        const downloadCount = document.getElementById('downloadCount');
+        const likeBtn = document.getElementById('likeBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const favoriteBtn = document.getElementById('favoriteBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const expandBtn = document.getElementById('expandBtn');
+        const colorPalette = document.getElementById('colorPalette');
+        const tagsContainer = document.getElementById('tagsContainer');
+        const relatedDesigns = document.getElementById('relatedDesigns');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Current project ID
+        let currentProjectId = null;
+
+        // Open modal with calendar data
+        function openModal(projectId) {
+            currentProjectId = projectId;
+            const calendar = calendarsData[projectId];
+            
+            if (!calendar) {
+                console.error(`Calendar data not found for project ID: ${projectId}`);
+                return;
+            }
+            
+            // Set basic info
+            modalImage.src = calendar.imageUrl;
+            modalImage.alt = calendar.title;
+            modalTitle.textContent = calendar.title;
+            modalSubtitle.textContent = calendar.subtitle;
+            modalDescription.textContent = calendar.description;
+            calendarType.textContent = calendar.calendarType;
+            fileFormat.textContent = calendar.fileFormat;
+            dimensions.textContent = calendar.dimensions;
+            downloadCount.textContent = calendar.downloadCount;
+            
+            // Reset button states
+            likeBtn.classList.remove('active');
+            favoriteBtn.classList.remove('active');
+            
+            // Set color palette
+            colorPalette.innerHTML = '';
+            if (calendar.colors && calendar.colorNames) {
+                calendar.colors.forEach((color, index) => {
+                    const colorElement = document.createElement('div');
+                    colorElement.className = 'color';
+                    colorElement.style.backgroundColor = color;
+                    
+                    const tooltip = document.createElement('span');
+                    tooltip.className = 'color-tooltip';
+                    tooltip.textContent = `${calendar.colorNames[index]} ${color}`;
+                    
+                    colorElement.appendChild(tooltip);
+                    colorPalette.appendChild(colorElement);
+                });
+            }
+            
+            // Set tags
+            tagsContainer.innerHTML = '';
+            if (calendar.tags) {
+                calendar.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'tag';
+                    tagElement.textContent = tag;
+                    tagsContainer.appendChild(tagElement);
+                });
+            }
+            
+            // Set related designs
+            relatedDesigns.innerHTML = '';
+            if (calendar.related) {
+                calendar.related.forEach(design => {
+                    const designElement = document.createElement('div');
+                    designElement.className = 'related-item';
+                    designElement.innerHTML = `
+                        <img src="${design.image}" alt="${design.title}">
+                    `;
+                    relatedDesigns.appendChild(designElement);
+                    
+                    // Click handler for related designs
+                    designElement.addEventListener('click', () => {
+                        openModal(design.id);
+                    });
+                });
+            }
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModalFunc() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Filter calendars
+        function filterCalendars(category) {
+            const cards = document.querySelectorAll('.calendar-card');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category').includes(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Event listeners
+        calendarCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                openModal(projectId);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModalFunc);
+
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Like button functionality
+        likeBtn.addEventListener('click', () => {
+            likeBtn.classList.toggle('active');
+        });
+
+        // Favorite button functionality
+        favoriteBtn.addEventListener('click', () => {
+            favoriteBtn.classList.toggle('active');
+        });
+
+        // Download button functionality
+        downloadBtn.addEventListener('click', () => {
+            alert(`Downloading ${calendarsData[currentProjectId].title}`);
+            // In a real app, this would trigger a file download
+            const currentDownloads = parseInt(downloadCount.textContent.replace(/,/g, ''));
+            downloadCount.textContent = (currentDownloads + 1).toLocaleString();
+        });
+
+        // Expand button functionality
+        expandBtn.addEventListener('click', () => {
+            window.open(calendarsData[currentProjectId].imageUrl, '_blank');
+        });
+
+        // Share button functionality
+        shareBtn.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: calendarsData[currentProjectId].title,
+                    text: `Check out this ${calendarsData[currentProjectId].calendarType}: ${calendarsData[currentProjectId].description}`,
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                copyToClipboard(window.location.href);
+                const originalHTML = shareBtn.innerHTML;
+                shareBtn.innerHTML = `<i class="fas fa-check"></i>`;
+                setTimeout(() => {
+                    shareBtn.innerHTML = originalHTML;
+                }, 2000);
+            }
+        });
+
+        // Filter button functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Filter cards
+                const category = btn.getAttribute('data-filter');
+                filterCalendars(category);
+            });
+        });
+
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModalFunc();
+            }
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile navigation toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+        if (mobileNavToggle) {
+            mobileNavToggle.addEventListener('click', () => {
+                const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+                mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+            });
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                if (mobileNavToggle) {
+                    mobileNavToggle.setAttribute('aria-expanded', 'false');
+                }
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Mobile dropdown toggle functionality
+        if (mobileDropdownToggles) {
+            mobileDropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const dropdown = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('i');
+                    
+                    dropdown.classList.toggle('active');
+                    
+                    if (dropdown.classList.contains('active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>

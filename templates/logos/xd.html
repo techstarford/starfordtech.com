@@ -1,0 +1,316 @@
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Business Card Design">
+                
+                <!-- Floating Action Buttons -->
+                <div class="floating-actions">
+                    <button class="action-btn like" id="likeBtn" title="Like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn download" id="downloadBtn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="action-btn favorite" id="favoriteBtn" title="Add to Favorites">
+                        <i class="fas fa-star"></i>
+                    </button>
+                    <button class="action-btn share" id="shareBtn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn expand" id="expandBtn" title="Expand">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle">Business Card Title</h2>
+                <p class="modal-subtitle" id="modalSubtitle">Business Card Subtitle</p>
+                
+                <p class="modal-description" id="modalDescription">Business card description goes here...</p>
+                
+                <div class="design-details">
+                    <div class="detail-item">
+                        <h4>Design Style</h4>
+                        <p id="designType">Minimal</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>File Format</h4>
+                        <p id="fileFormat">AI, PDF, PNG</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Dimensions</h4>
+                        <p id="dimensions">3.5×2 in (300dpi)</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Downloads</h4>
+                        <p id="downloadCount">1,245</p>
+                    </div>
+                </div>
+                
+                <div class="color-palette">
+                    <h3>Color Palette</h3>
+                    <div class="colors" id="colorPalette">
+                        <!-- Colors will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div class="tags" id="tagsContainer">
+                    <!-- Tags will be added dynamically -->
+                </div>
+                
+                <div class="related-designs">
+                    <h3>Related Business Cards</h3>
+                    <div class="related-grid" id="relatedDesigns">
+                        <!-- Related designs will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Business Card data - FIXED VARIABLE NAME
+        const businessCardsData = {
+            // Your business card data objects here (same as before)
+            1: {
+                title: "Clean White Business Card",
+                subtitle: "Simple and professional design with ample white space",
+                description: "This minimalist business card design focuses on clean typography and generous white space to create a professional, uncluttered appearance. The design uses a single accent color to highlight key information while maintaining an elegant, understated aesthetic. Perfect for professionals who want to convey sophistication and clarity.",
+                imageUrl: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                designType: "Minimal",
+                fileFormat: "AI, PDF, PNG",
+                dimensions: "3.5×2 in (300dpi)",
+                downloadCount: "1,245",
+                likes: 342,
+                colors: ["#FFFFFF", "#333333", "#4361ee"],
+                colorNames: ["White", "Dark Gray", "Primary Blue"],
+                tags: ["minimal", "professional", "clean", "typography", "white space"],
+                related: [
+                    {id: 6, image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Black & White"},
+                    {id: 16, image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Two-Tone"},
+                    {id: 21, image: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80", title: "Typography Focus"}
+                ]
+            },
+            // ... rest of your business card data
+        };
+
+        // DOM Elements
+        const modal = document.getElementById('projectModal');
+        const closeModal = document.getElementById('closeModal');
+        const businessCards = document.querySelectorAll('.business-card'); // FIXED SELECTOR
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const designType = document.getElementById('designType');
+        const fileFormat = document.getElementById('fileFormat');
+        const dimensions = document.getElementById('dimensions');
+        const downloadCount = document.getElementById('downloadCount');
+        const likeBtn = document.getElementById('likeBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const favoriteBtn = document.getElementById('favoriteBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const expandBtn = document.getElementById('expandBtn');
+        const colorPalette = document.getElementById('colorPalette');
+        const tagsContainer = document.getElementById('tagsContainer');
+        const relatedDesigns = document.getElementById('relatedDesigns');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+        // Current project ID
+        let currentProjectId = null;
+
+        // Open modal with business card data
+        function openModal(projectId) {
+            currentProjectId = projectId;
+            const card = businessCardsData[projectId];
+            
+            if (!card) {
+                console.error("Card data not found for ID:", projectId);
+                return;
+            }
+            
+            // Set basic info
+            modalImage.src = card.imageUrl;
+            modalTitle.textContent = card.title;
+            modalSubtitle.textContent = card.subtitle;
+            modalDescription.textContent = card.description;
+            designType.textContent = card.designType;
+            fileFormat.textContent = card.fileFormat;
+            dimensions.textContent = card.dimensions;
+            downloadCount.textContent = card.downloadCount;
+            
+            // Reset button states
+            likeBtn.classList.remove('active');
+            favoriteBtn.classList.remove('active');
+            
+            // Set color palette
+            colorPalette.innerHTML = '';
+            card.colors.forEach((color, index) => {
+                const colorElement = document.createElement('div');
+                colorElement.className = 'color';
+                colorElement.style.backgroundColor = color;
+                
+                const tooltip = document.createElement('span');
+                tooltip.className = 'color-tooltip';
+                tooltip.textContent = `${card.colorNames[index]} ${color}`;
+                
+                colorElement.appendChild(tooltip);
+                colorPalette.appendChild(colorElement);
+            });
+            
+            // Set tags
+            tagsContainer.innerHTML = '';
+            card.tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+                tagsContainer.appendChild(tagElement);
+            });
+            
+            // Set related designs
+            relatedDesigns.innerHTML = '';
+            card.related.forEach(design => {
+                const designElement = document.createElement('div');
+                designElement.className = 'related-item';
+                designElement.innerHTML = `
+                    <img src="${design.image}" alt="${design.title}">
+                `;
+                relatedDesigns.appendChild(designElement);
+                
+                // Click handler for related designs
+                designElement.addEventListener('click', () => {
+                    openModal(design.id);
+                });
+            });
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeModalFunc() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Filter business cards
+        function filterCards(category) {
+            const cards = document.querySelectorAll('.business-card');
+            
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Event listeners - FIXED LOOP
+        businessCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                openModal(projectId);
+            });
+        });
+
+        closeModal.addEventListener('click', closeModalFunc);
+
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Like button functionality
+        likeBtn.addEventListener('click', () => {
+            likeBtn.classList.toggle('active');
+        });
+
+        // Favorite button functionality
+        favoriteBtn.addEventListener('click', () => {
+            favoriteBtn.classList.toggle('active');
+        });
+
+        // Download button functionality
+        downloadBtn.addEventListener('click', () => {
+            alert(`Downloading ${businessCardsData[currentProjectId].title}`);
+            // In a real app, this would trigger a file download
+            const currentDownloads = parseInt(downloadCount.textContent.replace(/,/g, ''));
+            downloadCount.textContent = (currentDownloads + 1).toLocaleString();
+        });
+
+        // Expand button functionality
+        expandBtn.addEventListener('click', () => {
+            window.open(businessCardsData[currentProjectId].imageUrl, '_blank');
+        });
+
+        // Share button functionality
+        shareBtn.addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: businessCardsData[currentProjectId].title,
+                    text: `Check out this ${businessCardsData[currentProjectId].designType} business card: ${businessCardsData[currentProjectId].description}`,
+                    url: window.location.href
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                });
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                copyToClipboard(window.location.href);
+                const originalHTML = shareBtn.innerHTML;
+                shareBtn.innerHTML = `<i class="fas fa-check"></i>`;
+                setTimeout(() => {
+                    shareBtn.innerHTML = originalHTML;
+                }, 2000);
+            }
+        });
+
+        // Filter button functionality
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Filter cards
+                const category = btn.getAttribute('data-filter');
+                filterCards(category);
+            });
+        });
+
+        // Helper function to copy text to clipboard
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModalFunc();
+            }
+        });
+
+        // Initialize AOS
+        AOS.init();
+    </script>
+</body>
+</html>
