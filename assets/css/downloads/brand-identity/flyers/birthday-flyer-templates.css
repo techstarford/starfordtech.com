@@ -442,9 +442,9 @@ header {
   visibility: visible;
 }
 
-/*  main{
-            margin-bottom: 4rem;
-        } */
+.main{
+  margin-top: 6rem;
+} 
 
 /* Project Grid */
 .projects-grid {
