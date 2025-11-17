@@ -1785,6 +1785,7 @@ body {
     width: calc(100% - 40px);
     right: 20px;
     bottom: 20px;
+    width: 250px;
   }
 
   .youtube-body {
@@ -1799,6 +1800,32 @@ body {
   .channel-stats {
     justify-content: center;
   }
+
+  
+.youtube-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, var(--youtube-dark) 0%, #000000 100%);
+  color: var(--white);
+}
+
+.youtube-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.youtube-title i {
+  color: var(--youtube-red);
+  font-size: 1.2rem;
+}
+
+.youtube-title h3 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 }
 
 /* Toggle Button for Demo */
