@@ -1678,6 +1678,10 @@ body {
   gap: 5px;
 }
 
+.channel-stat span{
+  line-height: 14px;
+}
+
 .youtube-content {
   margin-bottom: 20px;
 }
@@ -1801,6 +1805,9 @@ body {
     justify-content: center;
   }
 
+  .channel-stat span{
+  line-height: 14px;
+}
   
 .youtube-header {
   display: flex;
