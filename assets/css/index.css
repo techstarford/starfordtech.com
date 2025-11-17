@@ -1796,6 +1796,16 @@ body {
     padding: 15px;
   }
 
+  .channel-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .channel-avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .channel-info {
     flex-direction: column;
     text-align: center;
