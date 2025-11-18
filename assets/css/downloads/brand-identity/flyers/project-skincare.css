@@ -1329,7 +1329,43 @@ header {
             gap: 5px;
             color: var(--gray);
         }
+
+        .related-links .template-card{
+          display: flex;
+         
+        }
         
+        .template-card .template-img{
+          flex: 0.5;
+           align-items: center;
+          justify-content: center;
+          align-content: center;
+        }
+        .template-card .template-img img{
+          height: 50px;
+          background-size: cover;
+        }
+
+        .template-card .template-info{
+          flex: 1;
+        }
+        .template-card .template-info h3{
+          font-size: 14px;
+          margin-top: 10px;
+          /* margin-bottom: 5px; */
+        }
+        .template-card .template-info p{
+          font-size: 12px;
+          line-height: 15px;
+            margin-bottom: 5px;
+        }
+
+        .template-card .template-info .template-price{
+          font-size: 12px;
+          line-height: 15px;
+        }
+
+
         /* Footer */
         footer {
             background-color: var(--dark);
