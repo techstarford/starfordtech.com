@@ -359,6 +359,81 @@ header {
   gap: 10px;
 }
 
+
+
+/* Enhanced Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 3px;
+  background-color: var(--dark);
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+/* Active state for mobile toggle */
+.mobile-nav.active + .mobile-nav-toggle .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.mobile-nav.active + .mobile-nav-toggle .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+.mobile-nav.active + .mobile-nav-toggle .hamburger-inner::after {
+  bottom: 0;
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+
+
+
+
 /* Mobile Navigation */
 .mobile-nav {
   position: fixed;
@@ -1185,5 +1260,231 @@ footer {
 
   .related-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Header Actions */
+@media (max-width: 992px) {
+  .header-actions {
+    display: none;
+  }
+  
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  /* Enhanced Mobile Navigation */
+  .mobile-nav {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .mobile-nav-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+  
+  .mobile-nav-close:hover {
+    background: var(--light-gray);
+  }
+  
+  .mobile-search-box {
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  
+  .mobile-search-box .search-box {
+    width: 100%;
+  }
+  
+  .mobile-search-box .search-box input {
+    width: 100%;
+    border-radius: 25px;
+    padding: 12px 20px 12px 45px;
+  }
+  
+  .mobile-search-box .search-box i {
+    left: 20px;
+  }
+  
+  .mobile-auth-buttons {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+  }
+  
+  .mobile-auth-buttons .header-action-btns {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .mobile-auth-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+  
+  /* Mobile Dropdown Improvements */
+  .mobile-dropdown-item {
+    position: relative;
+  }
+  
+  .mobile-dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    cursor: pointer;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  
+  .mobile-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 15px;
+  }
+  
+  .mobile-dropdown.active {
+    max-height: 500px;
+  }
+  
+  .mobile-dropdown li a {
+    display: block;
+    padding: 10px 0;
+    color: var(--medium-gray);
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .mobile-dropdown li:last-child a {
+    border-bottom: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+  .mobile-nav {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .logo img {
+    height: 35px;
+  }
+  
+  /* Business Cards Grid for Mobile */
+  .business-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .business-card {
+    margin-bottom: 10px;
+  }
+  
+  /* Filter Controls for Mobile */
+  .filter-controls {
+    padding: 0 15px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .filter-controls::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* Tablet Devices */
+@media (min-width: 577px) and (max-width: 768px) {
+  .business-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .page-header-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header-hero p {
+    font-size: 0.9rem;
+  }
+  
+  .business-card-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .modal-body {
+    padding: 15px;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  padding: 0 20px;
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    padding: 0 15px;
   }
 }

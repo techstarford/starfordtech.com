@@ -178,7 +178,7 @@
                 </li>
               </ul>
             </li>
-            <a href="../../blog/index.html">Blog</a></li>
+            <li><a href="../../blog/index.html">Blog</a></li>
             <li><a href="#">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -196,18 +196,16 @@
         </nav>
 
         <!-- Mobile Navigation Toggle -->
-        <button
-          class="mobile-nav-toggle"
-          aria-controls="mobile-nav"
-          aria-expanded="false"
-        >
-          <i class="fas fa-bars"></i>
+        <button class="mobile-nav-toggle" aria-controls="mobile-nav" aria-expanded="false">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
         </button>
       </div>
     </header>
 
     <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobile-nav">
+    <!-- <div class="mobile-nav" id="mobile-nav">
         <div class="mobile-nav-header">
             <a href="../../index.html" class="logo">
                 <img
@@ -332,7 +330,142 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="quote.html">Get a Quote</a></li>
         </ul>
+    </div> -->
+
+    <!-- Mobile Navigation -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-header">
+    <a href="../../index.html" class="logo">
+      <img src="../../assets/icons/starford.png" alt="Starford Tech Graphics Logo" />
+      Starford<span>Tech</span>
+    </a>
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  
+  <!-- Add Search Box in Mobile Menu -->
+  <div class="mobile-search-box">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="Search designs..." />
     </div>
+  </div>
+  
+  <ul class="mobile-nav-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li class="mobile-dropdown-item">
+      <div class="mobile-dropdown-toggle">
+        <span>Templates</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <ul class="mobile-dropdown">
+        <!-- Keep your existing template dropdown content -->
+        <li><a href="../../templates/flyers/index.html">Flyers</a></li>
+        <li><a href="../../templates/logos/index.html">Logos</a></li>
+        <li><a href="../../templates/mockups/index.html">Mockups</a></li>
+        <li><a href="../../templates/posters/index.html">Posters</a></li>
+        <li><a href="../../templates/calendars/index.html">Calendars</a></li>
+        <li><a href="../../templates/business-cards/index.html">Business Cards</a></li>
+        <li><a href="../../downloads/social-media/index.html">Social Media</a></li>
+      </ul>
+    </li>
+
+    <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="../../downloads/index.html">Downloads</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="branding.html">Branding</a></li>
+                    <li><a href="print-design.html">Print Design</a></li>
+                    <li><a href="digital-design.html">Digital Design</a></li>
+                    <li><a href="packaging.html">Packaging</a></li>
+                    <li><a href="ui-ux.html">UI/UX Design</a></li>
+                    <li><a href="motion-graphics.html">Motion Graphics</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="portfolio.html">Portfolio</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="branding-portfolio.html">Branding</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="logo-design.html">Logo Design</a></li>
+                            <li><a href="business-cards.html">Business Cards</a></li>
+                            <li><a href="brand-guidelines.html">Brand Guidelines</a></li>
+                            <li><a href="stationery.html">Stationery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="print-portfolio.html">Print Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="brochures.html">Brochures</a></li>
+                            <li><a href="flyers.html">Flyers</a></li>
+                            <li><a href="posters.html">Posters</a></li>
+                            <li><a href="magazines.html">Magazines</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="mobile-dropdown-toggle">
+                            <a href="digital-portfolio.html">Digital Design</a>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="mobile-dropdown">
+                            <li><a href="social-media.html">Social Media</a></li>
+                            <li><a href="web-banners.html">Web Banners</a></li>
+                            <li><a href="email-templates.html">Email Templates</a></li>
+                            <li><a href="digital-ads.html">Digital Ads</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="all-portfolio.html">View All Work</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="mobile-dropdown-toggle">
+                    <a href="#">Resources</a>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="mobile-dropdown">
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="fonts.html">Fonts</a></li>
+                    <li><a href="color-palettes.html">Color Palettes</a></li>
+                    <li><a href="blog.html">Design Blog</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+    
+    <!-- Add other menu items here -->
+    
+    <!-- Add Auth Buttons to Mobile Menu -->
+    <li class="mobile-auth-buttons">
+      <div class="header-action-btns">
+        <a href="sign-up.html" class="btn btn-bg">Sign-up</a>
+        <a href="login.html" class="btn btn-outline">Login</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
     
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
@@ -1531,7 +1664,7 @@
             });
         });
 
-        // Mobile navigation toggle
+        /*  // Mobile navigation toggle
         const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
         const mobileNav = document.getElementById('mobile-nav');
         const overlay = document.getElementById('overlay');
@@ -1568,7 +1701,78 @@
                     icon.classList.add('fa-chevron-down');
                 }
             });
-        });
+        }); 
+
+ */
+
+        // Enhanced Mobile Navigation
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const mobileNavClose = document.querySelector('.mobile-nav-close');
+const overlay = document.getElementById('overlay');
+const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+
+// Toggle mobile navigation
+mobileNavToggle.addEventListener('click', () => {
+  const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+  mobileNavToggle.setAttribute('aria-expanded', !isExpanded);
+  mobileNav.classList.toggle('active');
+  overlay.classList.toggle('active');
+  document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
+});
+
+// Close mobile navigation
+function closeMobileNav() {
+  mobileNavToggle.setAttribute('aria-expanded', 'false');
+  mobileNav.classList.remove('active');
+  overlay.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+mobileNavClose.addEventListener('click', closeMobileNav);
+overlay.addEventListener('click', closeMobileNav);
+
+// Enhanced mobile dropdown functionality
+mobileDropdownToggles.forEach(toggle => {
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const dropdown = toggle.parentElement.querySelector('.mobile-dropdown');
+    const icon = toggle.querySelector('i');
+    
+    // Close other dropdowns
+    document.querySelectorAll('.mobile-dropdown').forEach(otherDropdown => {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.classList.remove('active');
+        otherDropdown.parentElement.querySelector('.mobile-dropdown-toggle i').classList.remove('fa-chevron-up');
+        otherDropdown.parentElement.querySelector('.mobile-dropdown-toggle i').classList.add('fa-chevron-down');
+      }
+    });
+    
+    // Toggle current dropdown
+    dropdown.classList.toggle('active');
+    
+    if (dropdown.classList.contains('active')) {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-up');
+    } else {
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+    }
+  });
+});
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.mobile-dropdown-item')) {
+    document.querySelectorAll('.mobile-dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
+    document.querySelectorAll('.mobile-dropdown-toggle i').forEach(icon => {
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+    });
+  }
+}); 
     </script>
 </body>
 </html>
