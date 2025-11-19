@@ -607,6 +607,91 @@ header {
   color: white;
 }
 
+/* ===== Newsletter ===== */
+.newsletter {
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: var(--white);
+  padding: 70px 40px;
+  border-radius: var(--border-radius);
+  margin: 80px auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.newsletter::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.newsletter-content {
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.newsletter p {
+  margin-bottom: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 0 30px;
+  background: var(--dark);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+  background: #111;
+}
+
+
 /* ===== Footer ===== */
 footer {
   background-color: var(--dark);
@@ -614,6 +699,12 @@ footer {
   padding: 80px 0 30px;
   position: relative;
 }
+
+.footer-wave {
+  height: 10px;
+  background: linear-gradient(90deg, #4361ee, #3a0ca3, #7209b7);
+}
+
 
 .footer-wave {
   position: absolute;

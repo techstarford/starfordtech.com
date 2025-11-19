@@ -6,7 +6,10 @@
   --secondary: #f72585;
   --accent: #4cc9f0;
   --dark: #1a1a2e;
+  --dark: #212529;
   --dark-gray: #333;
+  
+  --dark-gray: #6c757d;
   --medium-gray: #666;
   --light-gray: #e0e0e0;
   --light: #f8f9fa;
@@ -14,44 +17,21 @@
   --success: #38b000;
   --warning: #ff9e00;
   --danger: #ef233c;
+  --success: #4cc9f0;
+  --warning: #f9c74f;
+  --danger: #f94144;
 
   --header-height: 80px;
   --border-radius: 12px;
   --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-
-
-:root {
-  --primary: #4361ee;
-  --secondary: #3a0ca3;
-  --accent: #f72585;
-  --light: #f8f9fa;
-  --white: #ffffff;
-  --dark: #212529;
-  --dark-gray: #6c757d;
-  --medium-gray: #adb5bd;
-  --light-gray: #e9ecef;
-  --success: #4cc9f0;
-  --warning: #f9c74f;
-  --danger: #f94144;
-  --transition: all 0.3s ease;
   --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+   
+  --transition: all 0.3s ease;
   --radius: 8px;
   --youtube-red: #ff0000;
   --youtube-dark: #282828;
 }
-
-
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--dark);
-  background-color: var(--light);
-  overflow-x: hidden;
-} 
-
 
 
 /* CSS RESET */
@@ -66,7 +46,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif, "Segoe UI", Tahoma, Geneva, Verdana;
   background-color: var(--light);
   color: var(--dark);
   line-height: 1.6;

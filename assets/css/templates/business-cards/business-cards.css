@@ -983,6 +983,12 @@ footer {
 }
 
 .footer-wave {
+  height: 10px;
+  background: linear-gradient(90deg, #4361ee, #3a0ca3, #7209b7);
+}
+
+
+.footer-wave {
   position: absolute;
   top: -100px;
   left: 0;
