@@ -598,6 +598,9 @@ header {
   flex-wrap: wrap;
   gap: 10px;
   margin: 20px 0;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 2rem;
 }
 
 .filter-btn {
@@ -617,13 +620,16 @@ header {
 
 /* Pagination */
 .pagination ul{
+  justify-content: center;
   display: flex;
-  align-items: center;
-  text-align: center;
+  margin-top: 2rem;
+  gap: 20px;
 }
 .pagination ul li{
   background-color: #4895ef;
   border: 1px solid var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* Modal Styles */
