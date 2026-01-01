@@ -480,6 +480,90 @@ header {
 
 
 
+/* ===== Template Detail Page Specific Styles ===== */
+.template-detail-page {
+    padding-top: calc(var(--header-height) + 40px);
+    background: var(--light);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.breadcrumb a {
+    transition: var(--transition);
+    color: var(--dark-gray);
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb span {
+    color: var(--medium-gray);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    gap: 40px;
+    padding: 20px 0 80px;
+}
+
+.content-area {
+    flex: 1;
+    min-width: 0; /* Prevent flex item from overflowing */
+}
+
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+}
+
+/* Mobile-first approach - Content comes first by default */
+@media (max-width: 1100px) {
+    .main-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .content-area {
+        order: 1; /* Content comes first on mobile */
+        width: 100%;
+    }
+    
+    .sidebar {
+        order: 2; /* Sidebar comes second on mobile */
+        width: 100%;
+    }
+}
+
+/* Desktop view */
+@media (min-width: 1101px) {
+    .main-content {
+        flex-direction: row;
+    }
+    
+    .content-area {
+        order: 1;
+    }
+    
+    .sidebar {
+        order: 2;
+    }
+}
+
+/* Rest of your existing template-detail.css styles continue below... */
+
+
 /* ===== Global Variables & Reset ===== */
 :root {
   --primary: #6c63ff;
