@@ -1,0 +1,532 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Slider -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- AOS Animation -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Initialize AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // ===== Mobile Navigation =====
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const overlay = document.querySelector('.overlay');
+        const mobileNavClose = document.querySelector('.mobile-nav-close');
+        const body = document.body;
+
+        // Create overlay if it doesn't exist
+        if (!overlay) {
+            const overlayDiv = document.createElement('div');
+            overlayDiv.className = 'overlay';
+            document.body.appendChild(overlayDiv);
+        }
+
+        const overlayElement = document.querySelector('.overlay');
+
+        // Mobile Navigation Toggle
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            overlayElement.classList.add('active');
+            body.style.overflow = 'hidden';
+        });
+
+        // Close Mobile Navigation
+        mobileNavClose.addEventListener('click', closeMobileNav);
+        overlayElement.addEventListener('click', closeMobileNav);
+
+        function closeMobileNav() {
+            mobileNav.classList.remove('active');
+            overlayElement.classList.remove('active');
+            body.style.overflow = '';
+            
+            // Close all dropdowns
+            mobileDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+            mobileDropdownIcons.forEach(icon => {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            });
+        }
+
+        // Mobile Dropdown Toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        const mobileDropdowns = document.querySelectorAll('.mobile-dropdown');
+        const mobileDropdownIcons = document.querySelectorAll('.mobile-dropdown-toggle i');
+
+        mobileDropdownToggles.forEach((toggle, index) => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                // Close other dropdowns
+                mobileDropdowns.forEach((d, i) => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                        mobileDropdownIcons[i].classList.remove('fa-chevron-up');
+                        mobileDropdownIcons[i].classList.add('fa-chevron-down');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // ===== Desktop Dropdown Menus =====
+        const desktopDropdowns = document.querySelectorAll('.desktop-nav .dropdown');
+        
+        desktopDropdowns.forEach(dropdown => {
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+            
+            // Show on hover
+            dropdown.addEventListener('mouseenter', () => {
+                dropdownMenu.style.display = 'block';
+                dropdownMenu.style.opacity = '1';
+                dropdownMenu.style.visibility = 'visible';
+            });
+            
+            // Hide on mouse leave
+            dropdown.addEventListener('mouseleave', () => {
+                dropdownMenu.style.display = 'none';
+                dropdownMenu.style.opacity = '0';
+                dropdownMenu.style.visibility = 'hidden';
+            });
+            
+            // Nested dropdown handling
+            const nestedDropdowns = dropdown.querySelectorAll('.dropdown-side');
+            dropdownMenu.addEventListener('mouseenter', () => {
+                dropdownMenu.style.display = 'block';
+                dropdownMenu.style.opacity = '1';
+                dropdownMenu.style.visibility = 'visible';
+            });
+            
+            // Initialize hidden state
+            dropdownMenu.style.display = 'none';
+            dropdownMenu.style.opacity = '0';
+            dropdownMenu.style.visibility = 'hidden';
+        });
+
+        // ===== Back to Top Button =====
+        const backToTop = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ===== Header Scroll Effect =====
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+
+        // ===== Filter Controls =====
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.textContent.toLowerCase();
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        const categories = card.dataset.categories.split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // ===== Modal/Popup Functionality =====
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const modalImage = document.querySelector('.modal-image');
+        const modalTitle = document.querySelector('.modal-title');
+        const modalSubtitle = document.querySelector('.modal-subtitle');
+        const modalDescription = document.querySelector('.modal-description');
+        const closeModal = document.querySelector('.close-modal');
+        const likeBtn = document.querySelector('.action-btn.like');
+        const favoriteBtn = document.querySelector('.action-btn.favorite');
+        const modalTags = document.querySelector('.tags');
+        const modalDesignDetails = document.querySelector('.design-details');
+
+        // Sample data for each design (you can expand this)
+        const designData = {
+            1: {
+                title: "Colorful Kids Party",
+                subtitle: "Birthday Flyer Design",
+                description: "This vibrant and playful flyer design is perfect for children's birthday parties. Featuring bright colors, fun illustrations, and a cheerful layout, it captures the excitement of a kid's celebration. The design includes space for all the important party details while maintaining a fun and energetic aesthetic that appeals to both kids and parents.",
+                image: "../../../assets/images/flyers/birthday-flyers/birthday-flyer-1.jpg",
+                tags: ["Kids", "Birthday", "Party", "Colorful", "Fun"],
+                details: {
+                    style: "Modern, Playful",
+                    dimensions: "5.5 × 8.5 inches",
+                    format: "JPG, PNG, PSD",
+                    printReady: "Yes, 300 DPI"
+                }
+            },
+            2: {
+                title: "Elegant Celebration",
+                subtitle: "Adult Birthday Flyer Design",
+                description: "Sophisticated and elegant design perfect for adult birthday celebrations. This template features a clean, modern layout with subtle gradients and premium typography. Ideal for milestone birthdays, anniversaries, or any formal celebration where you want to impress your guests.",
+                image: "../../../assets/images/flyers/birthday-flyers/birthday-flyer-2.jpg",
+                tags: ["Adult", "Elegant", "Formal", "Modern", "Premium"],
+                details: {
+                    style: "Elegant, Modern",
+                    dimensions: "5.5 × 8.5 inches",
+                    format: "JPG, PNG, AI",
+                    printReady: "Yes, 300 DPI"
+                }
+            },
+            // Add more design data as needed...
+        };
+
+        // Modal open/close functions
+        function openModal(designId) {
+            const data = designData[designId] || designData[1]; // Fallback to first design
+            
+            modalImage.src = data.image;
+            modalImage.alt = data.title;
+            modalTitle.textContent = data.title;
+            modalSubtitle.textContent = data.subtitle;
+            modalDescription.textContent = data.description;
+            
+            // Update tags
+            modalTags.innerHTML = '';
+            data.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.textContent = tag;
+                modalTags.appendChild(span);
+            });
+            
+            // Update design details
+            if (modalDesignDetails) {
+                modalDesignDetails.querySelectorAll('.detail-item')[0].querySelector('p').textContent = data.details.style;
+                modalDesignDetails.querySelectorAll('.detail-item')[1].querySelector('p').textContent = data.details.dimensions;
+                modalDesignDetails.querySelectorAll('.detail-item')[2].querySelector('p').textContent = data.details.format;
+                modalDesignDetails.querySelectorAll('.detail-item')[3].querySelector('p').textContent = data.details.printReady;
+            }
+            
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModalFunction() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Add click event to each project card
+        projectCards.forEach((card, index) => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => {
+                const designId = (index % 8) + 1; // Cycle through 8 designs
+                openModal(designId);
+            });
+            
+            // Optional: Add hover effect
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Close modal events
+        closeModal.addEventListener('click', closeModalFunction);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModalFunction();
+            }
+        });
+
+        // Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModalFunction();
+            }
+        });
+
+        // Like and favorite button functionality
+        likeBtn.addEventListener('click', () => {
+            likeBtn.classList.toggle('active');
+        });
+        
+        favoriteBtn.addEventListener('click', () => {
+            favoriteBtn.classList.toggle('active');
+        });
+
+        // ===== Search Box Functionality =====
+        const searchBox = document.querySelector('.search-box input');
+        if (searchBox) {
+            searchBox.addEventListener('focus', function() {
+                this.parentElement.classList.add('active');
+            });
+            
+            searchBox.addEventListener('blur', function() {
+                this.parentElement.classList.remove('active');
+            });
+        }
+
+        // ===== Newsletter Form =====
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    alert('Thank you for subscribing! You will receive updates at ' + email);
+                    this.reset();
+                }
+            });
+        }
+
+        // ===== Color Tooltip =====
+        const colors = document.querySelectorAll('.color');
+        
+        colors.forEach(color => {
+            color.addEventListener('mouseenter', () => {
+                const tooltip = color.querySelector('.color-tooltip');
+                if (tooltip) {
+                    tooltip.style.opacity = '1';
+                    tooltip.style.visibility = 'visible';
+                }
+            });
+            
+            color.addEventListener('mouseleave', () => {
+                const tooltip = color.querySelector('.color-tooltip');
+                if (tooltip) {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.visibility = 'hidden';
+                }
+            });
+            
+            // Click to copy color code
+            color.addEventListener('click', () => {
+                const colorCode = color.dataset.color;
+                navigator.clipboard.writeText(colorCode).then(() => {
+                    const tooltip = color.querySelector('.color-tooltip');
+                    if (tooltip) {
+                        const originalText = tooltip.textContent;
+                        tooltip.textContent = 'Copied!';
+                        setTimeout(() => {
+                            tooltip.textContent = originalText;
+                        }, 2000);
+                    }
+                });
+            });
+        });
+
+        // ===== Image Loading Animation =====
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.classList.add('loaded');
+            });
+        });
+
+        // ===== Initialize on load =====
+        window.addEventListener('load', () => {
+            // Set initial header style
+            if (window.pageYOffset > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            }
+            
+            // Initialize any sliders if present
+            if ($('.templates-slider').length) {
+                $('.templates-slider').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    arrows: true,
+                    dots: true,
+                    responsive: [
+                        {
+                            breakpoint: 1200,
+                            settings: { slidesToShow: 3 }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: { slidesToShow: 2 }
+                        },
+                        {
+                            breakpoint: 576,
+                            settings: { slidesToShow: 1 }
+                        }
+                    ]
+                });
+            }
+        });
+    });
+
+    // Also add this CSS for the missing overlay in your CSS file or in a style tag
+    const style = document.createElement('style');
+    style.textContent = `
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin: 0 5px 5px 0;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            z-index: 10;
+        }
+        
+        .color-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            margin-bottom: 5px;
+        }
+        
+        .color-tooltip:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        
+        .action-btn.active {
+            color: #ff4757;
+        }
+    `;
+    document.head.appendChild(style);
+</script>
