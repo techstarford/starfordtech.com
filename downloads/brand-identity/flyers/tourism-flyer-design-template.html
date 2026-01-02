@@ -1,0 +1,63 @@
+
+
+  
+    <script>
+         // Like Button Functionality
+        const likeBtn = document.getElementById('like-btn');
+        const likeCount = document.querySelector('.like-count');
+        let liked = false;
+        let count = 124;
+        
+        likeBtn.addEventListener('click', function() {
+            if (!liked) {
+                liked = true;
+                likeBtn.classList.add('liked');
+                likeBtn.innerHTML = '<i class="fas fa-heart"></i><span>Liked</span><span class="like-count">(' + (count + 1) + ')</span>';
+            } else {
+                liked = false;
+                likeBtn.classList.remove('liked');
+                likeBtn.innerHTML = '<i class="far fa-heart"></i><span>Like</span><span class="like-count">(' + count + ')</span>';
+            }
+        });
+        
+        // Download Button Functionality
+        const downloadBtn = document.getElementById('download-btn');
+        
+        downloadBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would trigger the download
+            // For demo purposes, we'll show an alert
+            alert('Thank you for downloading our template! Your download should start shortly.');
+            
+            // Simulate download completion
+            setTimeout(() => {
+                // Show download complete message
+                const originalText = downloadBtn.textContent;
+                downloadBtn.innerHTML = '<i class="fas fa-check"></i> Download Complete!';
+                downloadBtn.style.backgroundColor = '#4BB543';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    downloadBtn.textContent = originalText;
+                    downloadBtn.style.backgroundColor = '';
+                }, 3000);
+            }, 1500);
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
+            
+            // In a real implementation, you would send this to your server
+            console.log('Subscribed email:', email);
+            
+            // Show success message
+            emailInput.value = '';
+            alert('Thank you for subscribing to our newsletter!');
+        });
+    </script>
