@@ -1113,3 +1113,162 @@ footer {
 body.no-scroll {
   overflow: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Header & Navigation ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--white);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px !important; /* Force padding */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: maroon;
+  z-index: 1001;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: rgb(0, 0, 171);
+}
+
+/* Mobile Navigation Toggle - FIXED POSITIONING */
+.mobile-nav-toggle {
+  display: none; /* Hidden by default on desktop */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dark);
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Design - UPDATED */
+@media (max-width: 992px) {
+  /* Hide desktop nav on tablets */
+  .desktop-nav {
+    display: none;
+  }
+  
+  /* Show mobile toggle */
+  .mobile-nav-toggle {
+    display: flex !important; /* Force display on mobile */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+  }
+  
+  /* Adjust header for mobile */
+  .header-container {
+    padding: 0 15px !important;
+    height: 70px; /* Reduce height on mobile */
+  }
+  
+  header {
+    height: 70px !important; /* Match container height */
+  }
+  
+  .logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 35px;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 15px !important;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .mobile-nav-toggle {
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-container {
+    padding: 0 12px !important;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .logo img {
+    height: 28px;
+    margin-right: 8px;
+  }
+}
