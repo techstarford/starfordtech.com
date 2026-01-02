@@ -199,7 +199,8 @@
         </ul>
     </div>
     
-
+    <!-- Overlay (Add this right after mobile nav) -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- ===== Main Content ===== -->
     <div class="container">
@@ -512,7 +513,239 @@
     <!-- JavaScript Libraries -->
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+        // Initialize AOS Animation
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+        }
+
+        // DOM Elements
+        const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        const body = document.body;
+        const header = document.getElementById('header');
+
+        // Create overlay if it doesn't exist
+        if (!overlay) {
+            const overlayDiv = document.createElement('div');
+            overlayDiv.className = 'overlay';
+            overlayDiv.id = 'overlay';
+            document.body.appendChild(overlayDiv);
+        }
+
+        // Mobile Navigation Toggle
+        mobileNavToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                document.querySelector('.overlay').classList.toggle('active');
+                body.classList.toggle('no-scroll');
+                
+                // Change icon
+                const icon = toggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on overlay
+        document.querySelector('.overlay').addEventListener('click', () => {
+            mobileNavToggles.forEach(toggle => {
+                toggle.setAttribute('aria-expanded', 'false');
+                const icon = toggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+            mobileNav.classList.remove('active');
+            document.querySelector('.overlay').classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+
+        // Mobile dropdown toggle
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+        
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const dropdown = toggle.parentElement.querySelector('.mobile-dropdown, .dropdown-menu');
+                const icon = toggle.querySelector('i');
+                
+                if (dropdown) {
+                    dropdown.classList.toggle('active');
+                    if (dropdown.classList.contains('active')) {
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.mobile-dropdown-toggle')) {
+                mobileDropdownToggles.forEach(toggle => {
+                    const dropdown = toggle.parentElement.querySelector('.mobile-dropdown, .dropdown-menu');
+                    const icon = toggle.querySelector('i');
+                    if (dropdown && dropdown.classList.contains('active')) {
+                        dropdown.classList.remove('active');
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            }
+        });
+
+        // Desktop dropdown functionality
+        if (window.innerWidth > 992) {
+            const desktopDropdowns = document.querySelectorAll('.nav-links > li');
+            
+            desktopDropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', () => {
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    if (menu) {
+                        menu.style.opacity = '1';
+                        menu.style.visibility = 'visible';
+                        menu.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                dropdown.addEventListener('mouseleave', () => {
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    if (menu) {
+                        menu.style.opacity = '0';
+                        menu.style.visibility = 'hidden';
+                        menu.style.transform = 'translateY(10px)';
+                    }
+                });
+            });
+
+            // Nested dropdown functionality
+            const dropdownItems = document.querySelectorAll('.dropdown-menu > li');
+            
+            dropdownItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const submenu = item.querySelector('.dropdown-side');
+                    if (submenu) {
+                        submenu.style.opacity = '1';
+                        submenu.style.visibility = 'visible';
+                        submenu.style.transform = 'translateX(0)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    const submenu = item.querySelector('.dropdown-side');
+                    if (submenu) {
+                        submenu.style.opacity = '0';
+                        submenu.style.visibility = 'hidden';
+                        submenu.style.transform = 'translateX(10px)';
+                    }
+                });
+            });
+        }
+
+        // Sticky Header on Scroll
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.height = '70px';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                    header.style.height = '80px';
+                }
+            });
+        }
+
+        // Like Button Functionality
+        const likeBtn = document.getElementById('like-btn');
+        if (likeBtn) {
+            let liked = false;
+            let count = 124;
+            
+            likeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (!liked) {
+                    liked = true;
+                    likeBtn.classList.add('liked');
+                    likeBtn.innerHTML = '<i class="fas fa-heart"></i><span>Liked</span><span class="like-count">(' + (count + 1) + ')</span>';
+                    likeBtn.style.color = 'var(--secondary)';
+                } else {
+                    liked = false;
+                    likeBtn.classList.remove('liked');
+                    likeBtn.innerHTML = '<i class="far fa-heart"></i><span>Like</span><span class="like-count">(' + count + ')</span>';
+                    likeBtn.style.color = '';
+                }
+            });
+        }
+
+        // Download Button Functionality
+        const downloadBtn = document.getElementById('download-btn');
+        
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Show downloading message
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+                this.style.backgroundColor = '#4BB543';
+                
+                // Simulate download delay
+                setTimeout(() => {
+                    // Show success message
+                    this.innerHTML = '<i class="fas fa-check"></i> Download Complete!';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.backgroundColor = '';
+                    }, 3000);
+                }, 1500);
+            });
+        }
+
+        // Newsletter Form Submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                const email = emailInput.value;
+                
+                if (email) {
+                    emailInput.value = '';
+                    alert('Thank you for subscribing to our newsletter!');
+                }
+            });
+        }
+
+        // Update copyright year
+        const footerBottom = document.querySelector('.footer-bottom');
+        if (footerBottom) {
+            footerBottom.innerHTML = footerBottom.innerHTML.replace('2023', new Date().getFullYear());
+        }
+    </script>
+
+    <!-- <script>
 
         // DOM Elements
         const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
@@ -864,7 +1097,7 @@
 
         // Update copyright year
         document.querySelector('.footer-bottom').innerHTML = document.querySelector('.footer-bottom').innerHTML.replace('2023', new Date().getFullYear());
-    </script>
+    </script> -->
 
 </body>
 </html>
