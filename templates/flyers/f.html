@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Keep all your head content exactly as is -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional flyer templates for all your marketing needs. Download free and premium flyer designs for business, events, sales, real estate and more.">
+    <title>Premium Flyer Templates - Starford Tech</title>
+    <meta name="author-info" content="Macford Isaiah Ninshaba | Graphics Designer & Web Developer">
+
+    <!-- Keep all your links exactly as is -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/starford-tech-box-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/starford-tech-box-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/templates/flyers/index.css">
+    
+    <!-- Additional Styles for Loading -->
+    <style>
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .loading-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4361ee;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Quick View Modal */
+        .quick-view-modal {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            overflow: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .quick-view-modal.active {
+            display: block;
+            transform: translateY(0);
+        }
+        
+        .quick-view-content {
+            padding: 20px;
+        }
+        
+        .quick-view-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #666;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-view-close:hover {
+            background: #f0f0f0;
+            transform: rotate(90deg);
+        }
+        
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toast.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .toast.success {
+            background: #38b000;
+        }
+        
+        .toast.error {
+            background: #ef233c;
+        }
+        
+        .toast.info {
+            background: #4361ee;
+        }
+        
+        /* Selection Counter */
+        .selection-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #4361ee;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 999;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .selection-counter.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Selection Counter -->
+    <div class="selection-counter" id="selectionCounter">
+        <i class="fas fa-check-circle"></i>
+        <span id="selectedCount">0</span> templates selected
+        <button class="btn-clear" id="clearSelection">Clear</button>
+    </div>
+
+    <!-- Your entire HTML content from above goes here exactly as you have it -->
+    <!-- From <header id="header"> to </footer> -->
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <button class="quick-view-close" id="quickViewClose">&times;</button>
+        <div class="quick-view-content" id="quickViewContent">
+            <!-- Content loaded dynamically -->
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Complete JavaScript Implementation -->
+    <script>
+        // Complete Flyer Templates Data - All 12 templates with full details
+        const flyerTemplates = {
+            1: {
+                id: 1,
+                title: "Modern Corporate Flyer",
+                subtitle: "Professional business promotion with clean layout",
+                description: "This modern corporate flyer template features a clean, professional design perfect for business promotions, corporate announcements, and professional services marketing. The layout includes strategically placed sections for headlines, subheadings, body text, and contact information. With smart layers in PSD format, you can easily customize colors, text, and images to match your brand identity.",
+                fullDescription: "Designed for corporate environments, this flyer template features a sophisticated layout with grid-based design principles. It includes placeholder text for company information, service descriptions, and call-to-action sections. The typography hierarchy ensures readability while maintaining visual appeal. Perfect for B2B marketing, annual reports, or corporate service announcements.",
+                imageUrl: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Business",
+                price: 12.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 2345,
+                likes: 842,
+                lastUpdated: "2024-01-15",
+                colors: ["#2C3E50", "#3498DB", "#ECF0F1", "#E74C3C", "#2ECC71"],
+                colorNames: ["Midnight Blue", "Peter River", "Clouds", "Alizarin", "Emerald"],
+                tags: ["business", "corporate", "professional", "modern", "clean", "minimal"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Fully layered PSD", "CMYK color mode", "Print ready", "Editable text", "High resolution"],
+                license: "Commercial Use",
+                related: [2, 3, 6, 8]
+            },
+            2: {
+                id: 2,
+                title: "Music Concert Flyer",
+                subtitle: "Vibrant design for concerts and nightlife events",
+                description: "Eye-catching music concert flyer with vibrant colors and dynamic typography perfect for promoting concerts, DJ nights, festivals, and music events. The design features bold elements that capture the energy of live music performances.",
+                fullDescription: "Created for music promoters and event organizers, this flyer template includes specialized sections for artist lineups, venue details, ticket tiers, and social media integration. The psychedelic color scheme and dynamic typography create excitement and urgency. Perfect for rock concerts, EDM events, jazz nights, or any musical performance.",
+                imageUrl: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Events",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "PDF", "PNG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 8742,
+                likes: 3215,
+                lastUpdated: "2024-01-10",
+                colors: ["#8E44AD", "#3498DB", "#F1C40F", "#E74C3C", "#2C3E50"],
+                colorNames: ["Wisteria", "Peter River", "Sun Flower", "Alizarin", "Midnight Blue"],
+                tags: ["music", "concert", "event", "party", "festival", "vibrant"],
+                requirements: "Adobe Photoshop CC 2018+",
+                features: ["Dynamic typography", "Artist lineup section", "Ticket information", "Social media integration"],
+                license: "Free for Commercial Use",
+                related: [1, 7, 10, 12]
+            },
+            3: {
+                id: 3,
+                title: "Real Estate Listing",
+                subtitle: "Property showcase with photo highlights",
+                description: "Professional real estate flyer template designed to showcase properties effectively. Features large image areas, property details section, agent information, and call-to-action buttons.",
+                fullDescription: "Specifically designed for real estate professionals, this template includes dedicated sections for property photos, amenities list, floor plans, agent profiles, and contact information. The clean layout highlights property features while maintaining professionalism. Perfect for residential listings, open house announcements, and property portfolios.",
+                imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Real Estate",
+                price: 14.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG", "INDD"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Landscape",
+                downloadCount: 1876,
+                likes: 654,
+                lastUpdated: "2024-01-12",
+                colors: ["#1ABC9C", "#16A085", "#F39C12", "#34495E", "#ECF0F1"],
+                colorNames: ["Turquoise", "Green Sea", "Orange", "Wet Asphalt", "Clouds"],
+                tags: ["real estate", "property", "listing", "house", "architecture", "professional"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+, Adobe InDesign CC 2018+",
+                features: ["Property photo grids", "Amenities checklist", "Floor plan section", "Agent profile area"],
+                license: "Commercial Use",
+                related: [1, 4, 6, 11]
+            },
+            4: {
+                id: 4,
+                title: "Restaurant Specials",
+                subtitle: "Appetizing design for food promotions",
+                description: "Delicious restaurant flyer template perfect for showcasing daily specials, new menu items, or seasonal promotions. Features food photography placeholders and clear pricing sections.",
+                fullDescription: "Crafted for restaurants and food businesses, this template includes mouth-watering design elements, menu item highlighting, pricing tables, and promotional sections. The color scheme stimulates appetite while the layout guides customers through your offerings. Perfect for cafes, bistros, fine dining, or food trucks.",
+                imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Restaurant",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "AI", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Square",
+                downloadCount: 6543,
+                likes: 2341,
+                lastUpdated: "2024-01-08",
+                colors: ["#E74C3C", "#F39C12", "#2ECC71", "#FFFFFF", "#34495E"],
+                colorNames: ["Alizarin", "Orange", "Emerald", "White", "Wet Asphalt"],
+                tags: ["restaurant", "food", "menu", "culinary", "promotion", "appetizing"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Food photo placeholders", "Menu pricing tables", "Promotional badges", "Contact section"],
+                license: "Free for Commercial Use",
+                related: [2, 5, 9, 12]
+            },
+            5: {
+                id: 5,
+                title: "Seasonal Sale Promotion",
+                subtitle: "Retail discount announcement",
+                description: "Vibrant sale flyer template perfect for seasonal promotions, clearance sales, and special discounts. Features bold discount badges and urgent call-to-action elements.",
+                fullDescription: "Designed for retail businesses, this template creates urgency with countdown timers, discount percentage badges, and limited-time offer messaging. The layout emphasizes savings while maintaining brand consistency. Perfect for Black Friday, holiday sales, clearance events, or store openings.",
+                imageUrl: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Sales",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "AI", "PDF"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 9231,
+                likes: 3456,
+                lastUpdated: "2024-01-05",
+                colors: ["#E74C3C", "#F1C40F", "#3498DB", "#FFFFFF", "#2C3E50"],
+                colorNames: ["Alizarin", "Sun Flower", "Peter River", "White", "Midnight Blue"],
+                tags: ["sale", "retail", "discount", "promotion", "shopping", "offer"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Discount percentage badges", "Countdown timer", "Product highlights", "Store information"],
+                license: "Free for Commercial Use",
+                related: [2, 4, 7, 10]
+            },
+            6: {
+                id: 6,
+                title: "Gym Membership Flyer",
+                subtitle: "Energetic design for fitness centers",
+                description: "Motivational fitness flyer template for gym promotions, membership drives, and class schedules. Features energetic design elements and clear call-to-action sections.",
+                fullDescription: "Created for fitness centers and health clubs, this template highlights membership benefits, class schedules, trainer profiles, and achievement metrics. The dynamic design motivates action while providing essential information. Perfect for gyms, yoga studios, crossfit boxes, or personal trainers.",
+                imageUrl: "https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Fitness",
+                price: 9.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 3456,
+                likes: 1234,
+                lastUpdated: "2024-01-18",
+                colors: ["#2ECC71", "#3498DB", "#E74C3C", "#F1C40F", "#FFFFFF"],
+                colorNames: ["Emerald", "Peter River", "Alizarin", "Sun Flower", "White"],
+                tags: ["fitness", "gym", "health", "workout", "exercise", "wellness"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Membership tier comparison", "Class schedule grid", "Trainer profiles", "Before/after section"],
+                license: "Commercial Use",
+                related: [1, 3, 8, 11]
+            },
+            7: {
+                id: 7,
+                title: "Educational Workshop",
+                subtitle: "Informative layout for seminars",
+                description: "Professional educational flyer template for workshops, seminars, and training sessions. Features organized layout for schedule, speaker bios, and registration details.",
+                fullDescription: "Designed for educational institutions and corporate training, this template includes session breakdowns, speaker credentials, learning objectives, and registration forms. The professional layout builds credibility while encouraging enrollment. Perfect for universities, training centers, or professional development workshops.",
+                imageUrl: "https://images.unsplash.com/photo-1542744173-05336a8ee7c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Education",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "AI", "PDF"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Landscape",
+                downloadCount: 4321,
+                likes: 1789,
+                lastUpdated: "2024-01-14",
+                colors: ["#3498DB", "#2ECC71", "#F39C12", "#FFFFFF", "#34495E"],
+                colorNames: ["Peter River", "Emerald", "Orange", "White", "Wet Asphalt"],
+                tags: ["education", "workshop", "seminar", "training", "learning", "professional"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Session timeline", "Speaker bios", "Learning objectives", "Registration form"],
+                license: "Free for Commercial Use",
+                related: [2, 5, 9, 12]
+            },
+            8: {
+                id: 8,
+                title: "Fashion Lookbook",
+                subtitle: "Stylish design for clothing brands",
+                description: "Sophisticated fashion flyer template for showcasing clothing collections, fashion shows, and brand launches. Features elegant typography and product highlighting.",
+                fullDescription: "Crafted for fashion brands and boutiques, this template showcases collections with style shots, fabric details, sizing information, and brand storytelling. The minimalist design lets products shine while maintaining brand elegance. Perfect for fashion shows, collection launches, or boutique promotions.",
+                imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Business",
+                price: 11.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Square",
+                downloadCount: 2189,
+                likes: 876,
+                lastUpdated: "2024-01-20",
+                colors: ["#000000", "#FFFFFF", "#BDC3C7", "#7F8C8D", "#E74C3C"],
+                colorNames: ["Black", "White", "Silver", "Gray", "Alizarin"],
+                tags: ["fashion", "clothing", "style", "brand", "collection", "elegant"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Collection showcases", "Fabric details", "Sizing guide", "Brand story section"],
+                license: "Commercial Use",
+                related: [1, 3, 6, 10]
+            },
+            9: {
+                id: 9,
+                title: "Non-Profit Charity",
+                subtitle: "Compassionate design for fundraising",
+                description: "Heartfelt charity flyer template for fundraising events, donation drives, and awareness campaigns. Features emotional imagery placeholders and donation information sections.",
+                fullDescription: "Designed for non-profit organizations, this template creates emotional connections with impact stories, donation breakdowns, volunteer opportunities, and success metrics. The compassionate design encourages support while maintaining transparency. Perfect for charities, NGOs, or community organizations.",
+                imageUrl: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Non-Profit",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "AI", "PDF", "PNG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 5678,
+                likes: 2345,
+                lastUpdated: "2024-01-07",
+                colors: ["#E74C3C", "#3498DB", "#2ECC71", "#F1C40F", "#FFFFFF"],
+                colorNames: ["Alizarin", "Peter River", "Emerald", "Sun Flower", "White"],
+                tags: ["charity", "non-profit", "fundraising", "donation", "help", "community"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Impact stories", "Donation breakdown", "Volunteer sign-up", "Success metrics"],
+                license: "Free for Commercial Use",
+                related: [2, 4, 7, 12]
+            },
+            10: {
+                id: 10,
+                title: "Product Launch Flyer",
+                subtitle: "Sleek design for new releases",
+                description: "Innovative product launch flyer template for announcing new products, technology releases, and brand innovations. Features sleek design elements and product highlighting.",
+                fullDescription: "Created for product launches and tech announcements, this template highlights features, specifications, availability, and introductory offers. The modern design creates excitement while providing essential product information. Perfect for electronics, software, appliances, or any new product introduction.",
+                imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Business",
+                price: 13.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Landscape",
+                downloadCount: 1543,
+                likes: 678,
+                lastUpdated: "2024-01-22",
+                colors: ["#34495E", "#3498DB", "#ECF0F1", "#E74C3C", "#2ECC71"],
+                colorNames: ["Wet Asphalt", "Peter River", "Clouds", "Alizarin", "Emerald"],
+                tags: ["product", "launch", "tech", "innovation", "release", "modern"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Feature highlights", "Specifications table", "Availability schedule", "Introductory offers"],
+                license: "Commercial Use",
+                related: [1, 3, 6, 8]
+            },
+            11: {
+                id: 11,
+                title: "Team Introduction",
+                subtitle: "Showcase your team members",
+                description: "Professional team introduction flyer for corporate teams, startups, and professional services. Features team member profiles and role descriptions.",
+                fullDescription: "Designed for team introductions and company profiles, this template includes individual profiles, role descriptions, team achievements, and contact information. The collaborative design builds trust while showcasing team expertise. Perfect for agencies, consultancies, or any professional team.",
+                imageUrl: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Business",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "AI", "PDF", "PNG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 3987,
+                likes: 1654,
+                lastUpdated: "2024-01-09",
+                colors: ["#2C3E50", "#3498DB", "#ECF0F1", "#F39C12", "#FFFFFF"],
+                colorNames: ["Midnight Blue", "Peter River", "Clouds", "Orange", "White"],
+                tags: ["team", "corporate", "professional", "staff", "introduction", "profile"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Individual profiles", "Role descriptions", "Team achievements", "Contact grid"],
+                license: "Free for Commercial Use",
+                related: [1, 3, 6, 10]
+            },
+            12: {
+                id: 12,
+                title: "Wedding Invitation",
+                subtitle: "Elegant design for special occasions",
+                description: "Beautiful wedding invitation flyer template for ceremonies, receptions, and special events. Features romantic design elements and detailed event information.",
+                fullDescription: "Crafted for weddings and special occasions, this template includes couple stories, event details, venue information, RSVP sections, and accommodation options. The romantic design sets the tone while providing all necessary information. Perfect for weddings, anniversaries, or any celebratory event.",
+                imageUrl: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                category: "Events",
+                price: 15.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Square",
+                downloadCount: 2876,
+                likes: 1234,
+                lastUpdated: "2024-01-25",
+                colors: ["#F7DC6F", "#D4AC0D", "#FFFFFF", "#A569BD", "#ECF0F1"],
+                colorNames: ["Gold", "Dark Gold", "White", "Purple", "Clouds"],
+                tags: ["wedding", "invitation", "celebration", "event", "romantic", "elegant"],
+                requirements: "Adobe Photoshop CC 2018+, Adobe Illustrator CC 2018+",
+                features: ["Couple story", "Event timeline", "Venue details", "RSVP section", "Accommodation info"],
+                license: "Commercial Use",
+                related: [2, 4, 7, 9]
+            }
+        };
+
+        // Complete JavaScript Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+
+            // DOM Elements
+            const modal = document.getElementById('flyerModal');
+            const closeModal = document.getElementById('closeModal');
+            const flyerCards = document.querySelectorAll('.project-card');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const designCategory = document.getElementById('designCategory');
+            const fileFormat = document.getElementById('fileFormat');
+            const dimensions = document.getElementById('dimensions');
+            const downloadCount = document.getElementById('downloadCount');
+            const orientation = document.getElementById('orientation');
+            const lastUpdated = document.getElementById('lastUpdated');
+            const modalPrice = document.getElementById('modalPrice');
+            const likeBtn = document.getElementById('likeBtn');
+            const likeCount = document.getElementById('likeCount');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const expandBtn = document.getElementById('expandBtn');
+            const previewBtn = document.getElementById('previewBtn');
+            const customizeBtn = document.getElementById('customizeBtn');
+            const purchaseBtn = document.getElementById('purchaseBtn');
+            const freeDownloadBtn = document.getElementById('freeDownloadBtn');
+            const colorPalette = document.getElementById('colorPalette');
+            const tagsContainer = document.getElementById('tagsContainer');
+            const formatBadges = document.getElementById('formatBadges');
+            const relatedDesigns = document.getElementById('relatedDesigns');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const searchInputs = document.querySelectorAll('input[type="text"]');
+            const filterSelects = document.querySelectorAll('.filter-select');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const backToTop = document.getElementById('backToTop');
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileNavClose = document.querySelector('.mobile-nav-close');
+            const mobileNav = document.getElementById('mobile-nav');
+            const overlay = document.getElementById('overlay');
+            const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const toast = document.getElementById('toast');
+            const quickViewModal = document.getElementById('quickViewModal');
+            const quickViewClose = document.getElementById('quickViewClose');
+            const quickViewContent = document.getElementById('quickViewContent');
+            const selectionCounter = document.getElementById('selectionCounter');
+            const selectedCount = document.getElementById('selectedCount');
+            const clearSelection = document.getElementById('clearSelection');
+
+            // State Management
+            let currentFlyerId = null;
+            let likedFlyers = JSON.parse(localStorage.getItem('likedFlyers')) || [];
+            let favoriteFlyers = JSON.parse(localStorage.getItem('favoriteFlyers')) || [];
+            let bookmarkedFlyers = JSON.parse(localStorage.getItem('bookmarkedFlyers')) || [];
+            let selectedFlyers = JSON.parse(localStorage.getItem('selectedFlyers')) || [];
+            let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+            // Initialize
+            function init() {
+                updateSelectionCounter();
+                setupEventListeners();
+                showLoading();
+                
+                // Simulate loading
+                setTimeout(() => {
+                    hideLoading();
+                }, 1000);
+            }
+
+            // Show loading overlay
+            function showLoading() {
+                loadingOverlay.classList.add('active');
+            }
+
+            // Hide loading overlay
+            function hideLoading() {
+                loadingOverlay.classList.remove('active');
+            }
+
+            // Show toast notification
+            function showToast(message, type = 'info') {
+                toast.textContent = message;
+                toast.className = `toast ${type}`;
+                toast.classList.add('active');
+                
+                setTimeout(() => {
+                    toast.classList.remove('active');
+                }, 3000);
+            }
+
+            // Update selection counter
+            function updateSelectionCounter() {
+                selectedCount.textContent = selectedFlyers.length;
+                if (selectedFlyers.length > 0) {
+                    selectionCounter.classList.add('active');
+                } else {
+                    selectionCounter.classList.remove('active');
+                }
+            }
+
+            // Open modal with flyer data
+            function openModal(flyerId) {
+                currentFlyerId = flyerId;
+                const flyer = flyerTemplates[flyerId];
+                
+                if (!flyer) return;
+                
+                // Set basic info
+                modalImage.src = flyer.imageUrl;
+                modalTitle.textContent = flyer.title;
+                modalSubtitle.textContent = flyer.subtitle;
+                modalDescription.textContent = flyer.fullDescription || flyer.description;
+                designCategory.textContent = flyer.category;
+                fileFormat.textContent = flyer.fileFormats.join(', ');
+                dimensions.textContent = flyer.dimensions;
+                downloadCount.textContent = flyer.downloadCount.toLocaleString();
+                orientation.textContent = flyer.orientation;
+                lastUpdated.textContent = flyer.lastUpdated;
+                
+                // Set price
+                if (flyer.free) {
+                    modalPrice.innerHTML = '<span class="price-free">FREE</span>';
+                    purchaseBtn.style.display = 'none';
+                    freeDownloadBtn.style.display = 'block';
+                } else {
+                    modalPrice.innerHTML = `<span class="price-premium">$${flyer.price.toFixed(2)}</span>`;
+                    purchaseBtn.style.display = 'block';
+                    freeDownloadBtn.style.display = 'none';
+                }
+                
+                // Set button states
+                updateButtonStates(flyerId);
+                
+                // Set file format badges
+                formatBadges.innerHTML = '';
+                flyer.fileFormats.forEach(format => {
+                    const badge = document.createElement('span');
+                   
