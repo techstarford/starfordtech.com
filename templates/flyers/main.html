@@ -371,6 +371,261 @@
                 }
             });
         });
+
+        // Desktop dropdown functionality for Services menu
+        const desktopDropdowns = document.querySelectorAll('.nav-links > li.dropdown');
+        
+        desktopDropdowns.forEach(dropdown => {
+            dropdown.addEventListener('mouseenter', () => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                if (menu) {
+                    menu.style.opacity = '1';
+                    menu.style.visibility = 'visible';
+                    menu.style.transform = 'translateY(0)';
+                }
+            });
+            
+            dropdown.addEventListener('mouseleave', () => {
+                const menu = dropdown.querySelector('.dropdown-menu');
+                if (menu) {
+                    menu.style.opacity = '0';
+                    menu.style.visibility = 'hidden';
+                    menu.style.transform = 'translateY(10px)';
+                }
+            });
+        });
+        
+        // Nested dropdown functionality for Portfolio submenus
+        const dropdownItems = document.querySelectorAll('.dropdown-menu > li');
+        
+        dropdownItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const submenu = item.querySelector('.dropdown-side');
+                if (submenu) {
+                    submenu.style.opacity = '1';
+                    submenu.style.visibility = 'visible';
+                    submenu.style.transform = 'translateX(0)';
+                }
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                const submenu = item.querySelector('.dropdown-side');
+                if (submenu) {
+                    submenu.style.opacity = '0';
+                    submenu.style.visibility = 'hidden';
+                    submenu.style.transform = 'translateX(10px)';
+                }
+            });
+        });
+        
+        // Mobile nested dropdown functionality
+        const mobileNestedToggles = document.querySelectorAll('.mobile-dropdown .mobile-dropdown-toggle');
+        
+        mobileNestedToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Newsletter Form Submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input').value;
+                
+                // Here you would typically send the email to your server
+                // For demo purposes, we'll just show an alert
+                alert(`Thank you for subscribing with ${email}! You'll receive our next design newsletter.`);
+                newsletterForm.reset();
+            });
+        }
+        
+        // Sticky Header on Scroll
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.height = '70px';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.height = '80px';
+            }
+        });
+        
+        // Search Functionality (Demo)
+        const searchBox = document.querySelector('.search-box input');
+        
+        if (searchBox) {
+            searchBox.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    alert(`Searching for design: ${searchBox.value}`);
+                    // In a real implementation, this would redirect to search results
+                }
+            });
+        }
+
+        // Lazy Loading for Images
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        
+        const lazyLoad = () => {
+            lazyImages.forEach(img => {
+                if (img.getBoundingClientRect().top < window.innerHeight + 100 && !img.src) {
+                    img.src = img.getAttribute('data-src');
+                    img.removeAttribute('data-src');
+                }
+            });
+        };
+        
+        // Initial load
+        lazyLoad();
+        
+        // Load on scroll
+        window.addEventListener('scroll', lazyLoad);
+
+        // Scroll Progress Indicator
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+        
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + '%';
+        });
+        
+        // Add progress bar styles
+        const progressStyle = document.createElement('style');
+        progressStyle.textContent = `
+            .scroll-progress {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 4px;
+                background: var(--primary);
+                z-index: 9998;
+                width: 0%;
+                transition: width 0.1s;
+            }
+        `;
+        document.head.appendChild(progressStyle);
+        
+        // Dark Mode Toggle
+        const darkModeToggle = document.createElement('button');
+        darkModeToggle.className = 'dark-mode-toggle';
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        darkModeToggle.title = 'Toggle Dark Mode';
+        document.body.appendChild(darkModeToggle);
+        
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        // Add dark mode styles
+        const darkModeStyle = document.createElement('style');
+        darkModeStyle.textContent = `
+            .dark-mode-toggle {
+                position: fixed;
+                bottom: 30px;
+                left: 30px;
+                width: 50px;
+                height: 50px;
+                background: var(--primary);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                z-index: 999;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            }
+            
+            body.dark-mode {
+                --light: #121212;
+                --white: #1e1e1e;
+                --dark: #f8f9fa;
+                --dark-gray: #e0e0e0;
+                --medium-gray: #b0b0b0;
+                --light-gray: #333;
+                background-color: var(--light);
+                color: var(--dark);
+            }
+            
+            body.dark-mode .service-card,
+            body.dark-mode .portfolio-item,
+            body.dark-mode .testimonial-card,
+            body.dark-mode .pricing-card {
+                background: var(--white);
+                border-color: #333;
+            }
+            
+            body.dark-mode .portfolio-overlay {
+                background: rgba(67, 97, 238, 0.8);
+            }
+            
+            body.dark-mode .section-title h2 {
+                color: var(--dark);
+            }
+            
+            body.dark-mode .section-title p {
+                color: var(--medium-gray);
+            }
+            
+            body.dark-mode .footer-col ul li a,
+            body.dark-mode .footer-contact p {
+                color: #bbb;
+            }
+        `;
+        document.head.appendChild(darkModeStyle);
     </script>
 
 </body>
