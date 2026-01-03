@@ -211,6 +211,422 @@
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
+     <!-- Hero Section -->
+    <section class="hero">
+        <div class="page-header-hero">
+            <h1>Premium Flyer Templates</h1>
+            <p>
+                Discover our collection of professionally designed flyer templates for all your marketing needs. 
+                From business promotions to event announcements, find the perfect design to communicate your message effectively.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">250+</span>
+                    <span class="stat-label">Flyer Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150</span>
+                    <span class="stat-label">Free Downloads</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Users</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section" data-aos="fade-up">
+            <!-- <div class="search-container">
+                <div class="search-box-large">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search flyer templates by keyword, category, or style..." id="mainSearchInput">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div> -->
+            
+            <!-- Advanced Filters -->
+            <div class="advanced-filters">
+                <div class="filter-group">
+                    <span class="filter-label">Filter by:</span>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="business">Business</option>
+                        <option value="event">Events</option>
+                        <option value="sale">Sales & Promotions</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="fitness">Fitness & Health</option>
+                        <option value="education">Education</option>
+                        <option value="non-profit">Non-Profit</option>
+                    </select>
+                    <select class="filter-select" id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="free">Free Only</option>
+                        <option value="premium">Premium Only</option>
+                    </select>
+                    <select class="filter-select" id="orientationFilter">
+                        <option value="all">All Orientations</option>
+                        <option value="portrait">Portrait</option>
+                        <option value="landscape">Landscape</option>
+                        <option value="square">Square</option>
+                    </select>
+                    <select class="filter-select" id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="downloads">Most Downloads</option>
+                        <option value="az">A to Z</option>
+                        <option value="za">Z to A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Filter Buttons -->
+        <div class="filter-controls" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Templates</button>
+            <button class="filter-btn" data-filter="free">Free Templates</button>
+            <button class="filter-btn" data-filter="premium">Premium</button>
+            <button class="filter-btn" data-filter="business" id="business-flyers">Business</button>
+            <button class="filter-btn" data-filter="event" id="event-flyers">Events</button>
+            <button class="filter-btn" data-filter="sale" id="sale-flyers">Sales</button>
+            <button class="filter-btn" data-filter="real-estate" id="real-estate-flyers">Real Estate</button>
+            <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+            <button class="filter-btn" data-filter="fitness">Fitness</button>
+        </div>
+        
+        <!-- Templates Grid -->
+        <div class="projects-grid">
+            <!-- Flyer 1 - Modern Business -->
+            <div class="project-card" data-project="1" data-category="business premium" data-price="premium" data-orientation="portrait">
+                <div class="project-badge premium">PREMIUM</div>
+                <div class="project-img">
+                    <img src="../../assets/images/flyers/more/Corporate flyer design.jpg" alt="Modern Business Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Modern Corporate Flyer</h3>
+                    <p>Professional business promotion with clean layout</p>
+                    <div class="project-meta">
+                        <span class="project-price">$12.99</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 2,345</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 2 - Music Event -->
+            <div class="project-card" data-project="2" data-category="event free" data-price="free" data-orientation="portrait">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="../../assets/images/flyers/more/music-event-flyer-design.jpeg" alt="Music Event Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Music Concert Flyer</h3>
+                    <p>Vibrant design for concerts and nightlife events</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 8,742</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 3 - Real Estate -->
+            <div class="project-card" data-project="3" data-category="real-estate premium" data-price="premium" data-orientation="landscape">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="../../assets/images/flyers/real-estate-flyer-design.jpeg" alt="Real Estate Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Real Estate Listing</h3>
+                    <p>Property showcase with photo highlights</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 1,876</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 4 - Restaurant -->
+            <div class="project-card" data-project="4" data-category="restaurant free" data-price="free" data-orientation="square">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Restaurant Specials</h3>
+                    <p>Appetizing design for food promotions</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 6,543</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 5 - Seasonal Sale -->
+            <div class="project-card" data-project="5" data-category="sale free" data-price="free" data-orientation="portrait">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sale Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Seasonal Sale Promotion</h3>
+                    <p>Retail discount announcement</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 9,231</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 6 - Fitness -->
+            <div class="project-card" data-project="6" data-category="fitness premium" data-price="premium" data-orientation="portrait">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fitness Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Gym Membership Flyer</h3>
+                    <p>Energetic design for fitness centers</p>
+                    <div class="project-meta">
+                        <span class="project-price">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 3,456</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 7 - Education -->
+            <div class="project-card" data-project="7" data-category="education free" data-price="free" data-orientation="landscape">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1542744173-05336a8ee7c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Educational Workshop</h3>
+                    <p>Informative layout for seminars</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 4,321</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 8 - Fashion -->
+            <div class="project-card" data-project="8" data-category="business premium" data-price="premium" data-orientation="square">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fashion Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Fashion Lookbook</h3>
+                    <p>Stylish design for clothing brands</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 2,189</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 9 - Non-Profit -->
+            <div class="project-card" data-project="9" data-category="non-profit free" data-price="free" data-orientation="portrait">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Charity Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Non-Profit Charity</h3>
+                    <p>Compassionate design for fundraising</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 5,678</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 10 - Product Launch -->
+            <div class="project-card" data-project="10" data-category="business premium" data-price="premium" data-orientation="landscape">
+                <div class="project-badge premium">PREMIUM</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Product Launch Flyer</h3>
+                    <p>Sleek design for new releases</p>
+                    <div class="project-meta">
+                        <span class="project-price">$5.99</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 1,543</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 11 - Team Introduction -->
+            <div class="project-card" data-project="11" data-category="business free" data-price="free" data-orientation="portrait">
+                <div class="project-badge free">FREE</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Team Introduction</h3>
+                    <p>Showcase your team members</p>
+                    <div class="project-meta">
+                        <span class="project-price free">Free</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 3,987</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flyer 12 - Wedding Event -->
+            <div class="project-card" data-project="12" data-category="event premium" data-price="premium" data-orientation="square">
+                <div class="project-badge premium">PREMIUM</div>
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Flyer">
+                </div>
+                <div class="project-info">
+                    <h3>Wedding Invitation</h3>
+                    <p>Elegant design for special occasions</p>
+                    <div class="project-meta">
+                        <span class="project-price">$2.99</span>
+                        <span class="project-downloads"><i class="fas fa-download"></i> 2,876</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Load More Button -->
+        <div class="load-more-container" data-aos="fade-up">
+            <button class="btn load-more-btn" id="loadMoreBtn">
+                <i class="fas fa-plus"></i> Load More Flyers
+            </button>
+        </div>
+    </div>
+
+        
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="flyerModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Flyer Image">
+                
+                <!-- Floating Action Buttons -->
+                <div class="floating-actions">
+                    <button class="action-btn like" id="likeBtn" title="Like">
+                        <i class="fas fa-heart"></i>
+                        <span class="action-count" id="likeCount">0</span>
+                    </button>
+                    <button class="action-btn download" id="downloadBtn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="action-btn favorite" id="favoriteBtn" title="Add to Favorites">
+                        <i class="fas fa-star"></i>
+                    </button>
+                    <button class="action-btn share" id="shareBtn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="action-btn bookmark" id="bookmarkBtn" title="Bookmark">
+                        <i class="fas fa-bookmark"></i>
+                    </button>
+                    <button class="action-btn expand" id="expandBtn" title="Expand">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-header-info">
+                    <div>
+                        <h2 class="modal-title" id="modalTitle">Flyer Title</h2>
+                        <p class="modal-subtitle" id="modalSubtitle">Flyer Subtitle</p>
+                    </div>
+                    <div class="modal-price" id="modalPrice"></div>
+                </div>
+                
+                <p class="modal-description" id="modalDescription">Flyer description goes here...</p>
+                
+                <div class="design-details">
+                    <div class="detail-item">
+                        <h4>Category</h4>
+                        <p id="designCategory">Business</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>File Format</h4>
+                        <p id="fileFormat">PSD, AI, PDF, PNG, JPG</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Dimensions</h4>
+                        <p id="dimensions">8.5×11 in | 2550×3300 px</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Downloads</h4>
+                        <p id="downloadCount">1,245</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Orientation</h4>
+                        <p id="orientation">Portrait</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Last Updated</h4>
+                        <p id="lastUpdated">2024-01-15</p>
+                    </div>
+                </div>
+                
+                <!-- File Formats -->
+                <div class="file-formats">
+                    <h3>Available Formats</h3>
+                    <div class="format-badges" id="formatBadges">
+                        <span class="format-badge">PSD</span>
+                        <span class="format-badge">AI</span>
+                        <span class="format-badge">PDF</span>
+                        <span class="format-badge">PNG</span>
+                        <span class="format-badge">JPG</span>
+                    </div>
+                </div>
+                
+                <!-- Color Palette -->
+                <div class="color-palette">
+                    <h3>Color Palette</h3>
+                    <div class="colors" id="colorPalette">
+                        <!-- Colors will be added dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Tags -->
+                <div class="tags-section">
+                    <h3>Tags</h3>
+                    <div class="tags" id="tagsContainer">
+                        <!-- Tags will be added dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="previewBtn">
+                        <i class="fas fa-eye"></i> Preview Full Size
+                    </button>
+                    <button class="btn btn-secondary" id="customizeBtn">
+                        <i class="fas fa-edit"></i> Customize Online
+                    </button>
+                    <button class="btn btn-success" id="purchaseBtn">
+                        <i class="fas fa-shopping-cart"></i> Purchase Template
+                    </button>
+                    <button class="btn btn-outline" id="freeDownloadBtn">
+                        <i class="fas fa-download"></i> Download Free Version
+                    </button>
+                </div>
+                
+                <!-- Related Flyers -->
+                <div class="related-designs">
+                    <h3>Related Flyers</h3>
+                    <div class="related-grid" id="relatedDesigns">
+                        <!-- Related designs will be added dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Newsletter -->
@@ -330,6 +746,7 @@
     
     <!-- AOS Animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
     <script>
         // Initialize AOS (Animate On Scroll)
@@ -639,6 +1056,613 @@
             }
         `;
         document.head.appendChild(darkModeStyle);
+ 
+
+
+    <!-- Custom JavaScript -->
+ 
+       
+
+        // Flyer data
+        const flyers = {
+            1: {
+                title: "Modern Corporate Flyer",
+                subtitle: "Professional business promotion with clean layout",
+                description: "This modern corporate flyer template features a clean, professional design perfect for business promotions, corporate announcements, and professional services marketing. The layout includes strategically placed sections for headlines, subheadings, body text, and contact information. With smart layers in PSD format, you can easily customize colors, text, and images to match your brand identity.",
+                imageUrl: "../../assets/images/flyers/more/Corporate flyer design.jpg",
+                category: "Business",
+                price: 12.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 2345,
+                likes: 842,
+                lastUpdated: "2024-01-15",
+                colors: ["#2C3E50", "#3498DB", "#ECF0F1", "#E74C3C", "#2ECC71"],
+                colorNames: ["Midnight Blue", "Peter River", "Clouds", "Alizarin", "Emerald"],
+                tags: ["business", "corporate", "professional", "modern", "clean", "minimal"],
+                related: [
+                    {id: 11, image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Team Introduction"},
+                    {id: 10, image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Product Launch Flyer"},
+                    {id: 8, image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Fashion Lookbook"}
+                ]
+            },
+            2: {
+                title: "Music Concert Flyer",
+                subtitle: "Vibrant design for concerts and nightlife events",
+                description: "Eye-catching music concert flyer with vibrant colors and dynamic typography perfect for promoting concerts, DJ nights, festivals, and music events. The design features bold elements that capture the energy of live music performances. Includes placeholders for artist lineups, venue details, ticket information, and social media handles.",
+                imageUrl: "../../assets/images/flyers/more/music-event-flyer-design.jpeg",
+                category: "Events",
+                price: 0,
+                free: true,
+                fileFormats: ["PSD", "PDF", "PNG"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Portrait",
+                downloadCount: 8742,
+                likes: 3215,
+                lastUpdated: "2024-01-10",
+                colors: ["#8E44AD", "#3498DB", "#F1C40F", "#E74C3C", "#2C3E50"],
+                colorNames: ["Wisteria", "Peter River", "Sun Flower", "Alizarin", "Midnight Blue"],
+                tags: ["music", "concert", "event", "party", "festival", "vibrant"],
+                related: [
+                    {id: 12, image: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Wedding Invitation"},
+                    {id: 7, image: "https://images.unsplash.com/photo-1542744173-05336a8ee7c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Educational Workshop"}
+                ]
+            },
+            3: {
+                title: "Real Estate Listing",
+                subtitle: "Property showcase with photo highlights",
+                description: "Professional real estate flyer template designed to showcase properties effectively. Features large image areas, property details section, agent information, and call-to-action buttons. Perfect for real estate agents, property managers, and developers looking to market listings, open houses, or new developments.",
+                imageUrl: "../../assets/images/flyers/real-estate-flyer-design.jpeg",
+                category: "Real Estate",
+                price: 14.99,
+                free: false,
+                fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG", "INDD"],
+                dimensions: "8.5×11 in | 2550×3300 px",
+                orientation: "Landscape",
+                downloadCount: 1876,
+                likes: 654,
+                lastUpdated: "2024-01-12",
+                colors: ["#1ABC9C", "#16A085", "#F39C12", "#34495E", "#ECF0F1"],
+                colorNames: ["Turquoise", "Green Sea", "Orange", "Wet Asphalt", "Clouds"],
+                tags: ["real estate", "property", "listing", "house", "architecture", "professional"],
+                related: [
+                    {id: 1, image: "https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Modern Corporate Flyer"},
+                    {id: 6, image: "https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Gym Membership Flyer"}
+                ]
+            }
+            // Additional flyer data would continue here...
+        };
+
+        // DOM Elements
+        const modal = document.getElementById('flyerModal');
+        const closeModal = document.getElementById('closeModal');
+        const flyerCards = document.querySelectorAll('.project-card');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const designCategory = document.getElementById('designCategory');
+        const fileFormat = document.getElementById('fileFormat');
+        const dimensions = document.getElementById('dimensions');
+        const downloadCount = document.getElementById('downloadCount');
+        const orientation = document.getElementById('orientation');
+        const lastUpdated = document.getElementById('lastUpdated');
+        const modalPrice = document.getElementById('modalPrice');
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCount = document.getElementById('likeCount');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const favoriteBtn = document.getElementById('favoriteBtn');
+        const shareBtn = document.getElementById('shareBtn');
+        const bookmarkBtn = document.getElementById('bookmarkBtn');
+        const expandBtn = document.getElementById('expandBtn');
+        const previewBtn = document.getElementById('previewBtn');
+        const customizeBtn = document.getElementById('customizeBtn');
+        const purchaseBtn = document.getElementById('purchaseBtn');
+        const freeDownloadBtn = document.getElementById('freeDownloadBtn');
+        const colorPalette = document.getElementById('colorPalette');
+        const tagsContainer = document.getElementById('tagsContainer');
+        const formatBadges = document.getElementById('formatBadges');
+        const relatedDesigns = document.getElementById('relatedDesigns');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInputs = document.querySelectorAll('input[type="text"]');
+        const filterSelects = document.querySelectorAll('.filter-select');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+       
+       
+        /*  const backToTop = document.getElementById('backToTop');
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNavClose = document.querySelector('.mobile-nav-close');
+        const mobileNav = document.getElementById('mobile-nav');
+        const overlay = document.getElementById('overlay');
+        const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+ */
+        // Current flyer ID and state
+        let currentFlyerId = null;
+        let likedFlyers = JSON.parse(localStorage.getItem('likedFlyers')) || [];
+        let favoriteFlyers = JSON.parse(localStorage.getItem('favoriteFlyers')) || [];
+        let bookmarkedFlyers = JSON.parse(localStorage.getItem('bookmarkedFlyers')) || [];
+
+        // Open modal with flyer data
+        function openModal(flyerId) {
+            currentFlyerId = flyerId;
+            const flyer = flyers[flyerId];
+            
+            // Set basic info
+            modalImage.src = flyer.imageUrl;
+            modalTitle.textContent = flyer.title;
+            modalSubtitle.textContent = flyer.subtitle;
+            modalDescription.textContent = flyer.description;
+            designCategory.textContent = flyer.category;
+            fileFormat.textContent = flyer.fileFormats.join(', ');
+            dimensions.textContent = flyer.dimensions;
+            downloadCount.textContent = flyer.downloadCount.toLocaleString();
+            orientation.textContent = flyer.orientation;
+            lastUpdated.textContent = flyer.lastUpdated;
+            
+            // Set price
+            if (flyer.free) {
+                modalPrice.innerHTML = '<span class="price-free">FREE</span>';
+                purchaseBtn.style.display = 'none';
+                freeDownloadBtn.style.display = 'block';
+            } else {
+                modalPrice.innerHTML = `<span class="price-premium">$${flyer.price.toFixed(2)}</span>`;
+                purchaseBtn.style.display = 'block';
+                freeDownloadBtn.style.display = 'none';
+            }
+            
+            // Set button states
+            updateButtonStates(flyerId);
+            
+            // Set file format badges
+            formatBadges.innerHTML = '';
+            flyer.fileFormats.forEach(format => {
+                const badge = document.createElement('span');
+                badge.className = 'format-badge';
+                badge.textContent = format;
+                formatBadges.appendChild(badge);
+            });
+            
+            // Set color palette
+            colorPalette.innerHTML = '';
+            flyer.colors.forEach((color, index) => {
+                const colorElement = document.createElement('div');
+                colorElement.className = 'color';
+                colorElement.style.backgroundColor = color;
+                colorElement.dataset.color = color;
+                
+                const tooltip = document.createElement('span');
+                tooltip.className = 'color-tooltip';
+                tooltip.textContent = `${flyer.colorNames[index]} ${color}`;
+                
+                colorElement.appendChild(tooltip);
+                colorPalette.appendChild(colorElement);
+                
+                // Add click to copy functionality
+                colorElement.addEventListener('click', () => {
+                    navigator.clipboard.writeText(color).then(() => {
+                        const originalTooltip = tooltip.textContent;
+                        tooltip.textContent = 'Copied!';
+                        setTimeout(() => {
+                            tooltip.textContent = originalTooltip;
+                        }, 2000);
+                    });
+                });
+            });
+            
+            // Set tags
+            tagsContainer.innerHTML = '';
+            flyer.tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+                tagsContainer.appendChild(tagElement);
+            });
+            
+            // Set related designs
+            relatedDesigns.innerHTML = '';
+            flyer.related.forEach(design => {
+                const designElement = document.createElement('div');
+                designElement.className = 'related-item';
+                designElement.innerHTML = `
+                    <img src="${design.image}" alt="${design.title}">
+                    <div class="related-overlay">
+                        <span>${design.title}</span>
+                    </div>
+                `;
+                relatedDesigns.appendChild(designElement);
+                
+                designElement.addEventListener('click', () => {
+                    openModal(design.id);
+                });
+            });
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Update button states based on localStorage
+        function updateButtonStates(flyerId) {
+            // Like button
+            if (likedFlyers.includes(flyerId)) {
+                likeBtn.classList.add('active');
+                likeCount.textContent = flyers[flyerId].likes + 1;
+            } else {
+                likeBtn.classList.remove('active');
+                likeCount.textContent = flyers[flyerId].likes;
+            }
+            
+            // Favorite button
+            if (favoriteFlyers.includes(flyerId)) {
+                favoriteBtn.classList.add('active');
+            } else {
+                favoriteBtn.classList.remove('active');
+            }
+            
+            // Bookmark button
+            if (bookmarkedFlyers.includes(flyerId)) {
+                bookmarkBtn.classList.add('active');
+            } else {
+                bookmarkBtn.classList.remove('active');
+            }
+        }
+
+        // Close modal
+        function closeModalFunc() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Filter flyers
+        function filterFlyers() {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            const category = document.getElementById('categoryFilter').value;
+            const price = document.getElementById('priceFilter').value;
+            const orientation = document.getElementById('orientationFilter').value;
+            const searchTerm = document.getElementById('mainSearchInput').value.toLowerCase();
+            
+            flyerCards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category').split(' ');
+                const cardPrice = card.getAttribute('data-price');
+                const cardOrientation = card.getAttribute('data-orientation');
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                let show = true;
+                
+                // Apply quick filter
+                if (activeFilter !== 'all' && !cardCategories.includes(activeFilter)) {
+                    show = false;
+                }
+                
+                // Apply category filter
+                if (category !== 'all' && !cardCategories.includes(category)) {
+                    show = false;
+                }
+                
+                // Apply price filter
+                if (price !== 'all' && cardPrice !== price) {
+                    show = false;
+                }
+                
+                // Apply orientation filter
+                if (orientation !== 'all' && cardOrientation !== orientation) {
+                    show = false;
+                }
+                
+                // Apply search filter
+                if (searchTerm && !title.includes(searchTerm) && !description.includes(searchTerm)) {
+                    show = false;
+                }
+                
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        // Event Listeners
+        flyerCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const flyerId = card.getAttribute('data-project');
+                openModal(flyerId);
+            });
+        });
+
+        closeModal.addEventListener('click', closeModalFunc);
+
+        // Close modal when clicking outside content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Like button functionality
+        likeBtn.addEventListener('click', () => {
+            if (likedFlyers.includes(currentFlyerId)) {
+                // Unlike
+                likedFlyers = likedFlyers.filter(id => id !== currentFlyerId);
+                likeBtn.classList.remove('active');
+                likeCount.textContent = flyers[currentFlyerId].likes;
+            } else {
+                // Like
+                likedFlyers.push(currentFlyerId);
+                likeBtn.classList.add('active');
+                likeCount.textContent = flyers[currentFlyerId].likes + 1;
+            }
+            localStorage.setItem('likedFlyers', JSON.stringify(likedFlyers));
+            
+            // In a real app, send this to backend
+            console.log(`Liked flyer ${currentFlyerId}:`, likedFlyers.includes(currentFlyerId));
+        });
+
+        // Favorite button functionality
+        favoriteBtn.addEventListener('click', () => {
+            if (favoriteFlyers.includes(currentFlyerId)) {
+                favoriteFlyers = favoriteFlyers.filter(id => id !== currentFlyerId);
+                favoriteBtn.classList.remove('active');
+            } else {
+                favoriteFlyers.push(currentFlyerId);
+                favoriteBtn.classList.add('active');
+            }
+            localStorage.setItem('favoriteFlyers', JSON.stringify(favoriteFlyers));
+            console.log(`Favorite flyer ${currentFlyerId}:`, favoriteFlyers.includes(currentFlyerId));
+        });
+
+        // Bookmark button functionality
+        bookmarkBtn.addEventListener('click', () => {
+            if (bookmarkedFlyers.includes(currentFlyerId)) {
+                bookmarkedFlyers = bookmarkedFlyers.filter(id => id !== currentFlyerId);
+                bookmarkBtn.classList.remove('active');
+            } else {
+                bookmarkedFlyers.push(currentFlyerId);
+                bookmarkBtn.classList.add('active');
+            }
+            localStorage.setItem('bookmarkedFlyers', JSON.stringify(bookmarkedFlyers));
+            console.log(`Bookmarked flyer ${currentFlyerId}:`, bookmarkedFlyers.includes(currentFlyerId));
+        });
+
+        // Download button functionality
+        downloadBtn.addEventListener('click', () => {
+            const flyer = flyers[currentFlyerId];
+            if (flyer.free) {
+                // Free download
+                alert(`Downloading free template: ${flyer.title}`);
+                // In a real app, this would trigger a file download
+                flyer.downloadCount++;
+                downloadCount.textContent = flyer.downloadCount.toLocaleString();
+                updateDownloadCount(currentFlyerId, flyer.downloadCount);
+            } else {
+                // Redirect to purchase
+                alert(`Redirecting to purchase page for: ${flyer.title}`);
+            }
+        });
+
+        // Expand button functionality
+        expandBtn.addEventListener('click', () => {
+            window.open(flyers[currentFlyerId].imageUrl, '_blank');
+        });
+
+        // Share button functionality
+        shareBtn.addEventListener('click', () => {
+            const flyer = flyers[currentFlyerId];
+            const shareData = {
+                title: flyer.title,
+                text: `Check out this ${flyer.category} flyer template: ${flyer.subtitle}`,
+                url: window.location.href + `?flyer=${currentFlyerId}`
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(shareData.url).then(() => {
+                    const originalHTML = shareBtn.innerHTML;
+                    shareBtn.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        shareBtn.innerHTML = originalHTML;
+                    }, 2000);
+                });
+            }
+        });
+
+        // Preview button
+        previewBtn.addEventListener('click', () => {
+            window.open(flyers[currentFlyerId].imageUrl, '_blank');
+        });
+
+        // Customize button
+        customizeBtn.addEventListener('click', () => {
+            alert(`Opening online editor for: ${flyers[currentFlyerId].title}`);
+            // In a real app, redirect to online editor
+        });
+
+        // Purchase button
+        purchaseBtn.addEventListener('click', () => {
+            const flyer = flyers[currentFlyerId];
+            alert(`Adding to cart: ${flyer.title} - $${flyer.price}`);
+            // In a real app, add to shopping cart
+        });
+
+        // Free download button
+        freeDownloadBtn.addEventListener('click', () => {
+            const flyer = flyers[currentFlyerId];
+            alert(`Downloading free template: ${flyer.title}`);
+            flyer.downloadCount++;
+            downloadCount.textContent = flyer.downloadCount.toLocaleString();
+            updateDownloadCount(currentFlyerId, flyer.downloadCount);
+        });
+
+        // Filter button functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                // Filter flyers
+                filterFlyers();
+            });
+        });
+
+        // Search functionality
+        searchInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                filterFlyers();
+            });
+        });
+
+        // Filter select functionality
+        filterSelects.forEach(select => {
+            select.addEventListener('change', () => {
+                filterFlyers();
+            });
+        });
+
+        // Load more functionality
+        loadMoreBtn.addEventListener('click', () => {
+            // In a real app, this would load more flyers from the server
+            alert('Loading more flyers...');
+            // Simulate loading
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            setTimeout(() => {
+                loadMoreBtn.innerHTML = '<i class="fas fa-plus"></i> Load More Flyers';
+                alert('More flyers loaded!');
+            }, 1500);
+        });
+
+        // Back to top functionality
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile navigation
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileNavClose.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Mobile dropdown toggle
+        mobileDropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const dropdown = toggle.nextElementSibling;
+                const icon = toggle.querySelector('.dropdown-icon');
+                
+                dropdown.classList.toggle('active');
+                if (dropdown.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModalFunc();
+            }
+        });
+
+        // Update download count (simulated backend integration)
+        function updateDownloadCount(flyerId, count) {
+            // In a real app, this would send data to backend
+            console.log(`Flyer ${flyerId} download count updated to: ${count}`);
+            // Example: fetch('/api/update-download-count', { method: 'POST', body: JSON.stringify({flyerId, count}) })
+        }
+
+        // Initialize tooltips
+        function initTooltips() {
+            const tooltipElements = document.querySelectorAll('[title]');
+            tooltipElements.forEach(element => {
+                element.addEventListener('mouseenter', (e) => {
+                    const title = e.target.getAttribute('title');
+                    if (title) {
+                        const tooltip = document.createElement('div');
+                        tooltip.className = 'custom-tooltip';
+                        tooltip.textContent = title;
+                        document.body.appendChild(tooltip);
+                        
+                        const rect = e.target.getBoundingClientRect();
+                        tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+                        tooltip.style.left = (rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2)) + 'px';
+                        
+                        e.target.dataset.tooltipId = tooltip;
+                    }
+                });
+                
+                element.addEventListener('mouseleave', (e) => {
+                    const tooltip = e.target.dataset.tooltipId;
+                    if (tooltip && tooltip.parentNode) {
+                        tooltip.parentNode.removeChild(tooltip);
+                    }
+                });
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            initTooltips();
+            
+            // Add CSS for custom tooltips
+            const style = document.createElement('style');
+            style.textContent = `
+                .custom-tooltip {
+                    position: fixed;
+                    background: rgba(0,0,0,0.8);
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    font-size: 12px;
+                    z-index: 9999;
+                    pointer-events: none;
+                    white-space: nowrap;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Responsive adjustments
+        function handleResize() {
+            // Adjust modal for mobile
+            if (window.innerWidth <= 768) {
+                const modalContent = document.querySelector('.modal-content');
+                modalContent.style.margin = '10px';
+                modalContent.style.maxHeight = '90vh';
+                modalContent.style.overflowY = 'auto';
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial call
     </script>
 
 </body>
