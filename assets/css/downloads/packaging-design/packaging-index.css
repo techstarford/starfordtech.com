@@ -1200,6 +1200,190 @@ footer {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Subscription Popup */
+        .subscription-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            z-index: 1002;
+            transform: translateX(400px);
+            transition: transform 0.5s ease;
+        }
+
+        .subscription-popup.active {
+            transform: translateX(0);
+        }
+
+        .popup-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .popup-header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .popup-header h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        .popup-header span {
+            color: var(--primary);
+        }
+
+        .popup-stats {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-radius: 5px;
+        }
+
+        .popup-stats i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .popup-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+        }
+
+        .popup-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .popup-form button:hover {
+            background-color: var(--secondary);
+        }
+
+        .popup-text {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            text-align: center;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                opacity: 0.3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form button {
+                border-radius: 5px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .subscription-popup {
+                width: calc(100% - 40px);
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .categories-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .design-details {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
 
         /* Responsive Styles */
         @media (max-width: 992px) {
