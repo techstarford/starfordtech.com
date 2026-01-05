@@ -595,9 +595,11 @@ header {
 /* Floating Action Buttons */
 .floating-actions {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
+  top: 80%;
   transform: translateX(-50%);
+ /*  transform: translateY(500%); */
   display: flex;
   gap: 10px;
   background: rgba(255, 255, 255, 0.9);
@@ -606,6 +608,7 @@ header {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   z-index: 5;
+  height: 60px;
 }
 
 .action-btn {
