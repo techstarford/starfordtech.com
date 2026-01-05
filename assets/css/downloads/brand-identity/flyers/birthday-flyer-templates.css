@@ -597,9 +597,8 @@ header {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  top: 80%;
+  /* top: 80%; */
   transform: translateX(-50%);
- /*  transform: translateY(500%); */
   display: flex;
   gap: 10px;
   background: rgba(255, 255, 255, 0.9);
