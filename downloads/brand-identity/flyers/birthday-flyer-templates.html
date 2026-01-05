@@ -602,6 +602,13 @@
                 <p class="modal-description">
                     This vibrant and playful flyer design is perfect for children's birthday parties. Featuring bright colors, fun illustrations, and a cheerful layout, it captures the excitement of a kid's celebration. The design includes space for all the important party details while maintaining a fun and energetic aesthetic that appeals to both kids and parents.
                 </p>
+
+
+                <div class="design-image-container">
+                    <div class="design-image">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                </div>
                 
                 <div class="design-details">
                     <div class="detail-item">
@@ -671,21 +678,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Newsletter -->
-    <!-- <div class="container">
-        <div class="newsletter" >
-            <div class="newsletter-content">
-                <h2>Get Free Design Templates Weekly</h2>
-                <p>Subscribe to receive weekly free flyer templates, design tips, and exclusive discounts</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn">Subscribe</button>
-                </form>
-                <p class="newsletter-note">By subscribing, you agree to our Privacy Policy. Unsubscribe at any time.</p>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Footer -->
     <footer>
@@ -1111,6 +1103,7 @@
                 subtitle: "Birthday Flyer Design",
                 image: "../../../assets/images/flyers/birthday-flyers/birthday-flyer-1.jpg",
                 description: "This vibrant and playful flyer design is perfect for children's birthday parties. Featuring bright colors, fun illustrations, and a cheerful layout, it captures the excitement of a kid's celebration. The design includes space for all the important party details while maintaining a fun and energetic aesthetic that appeals to both kids and parents.",
+                image: "../../../assets/images/flyers/birthday-flyers/birthday-flyer-1.jpg",
                 categories: ["kids", "fun", "modern"],
                 downloads: 1789,
                 likes: 567,
@@ -2592,12 +2585,13 @@
             /* Modal Download Button */
             .modal-download-btn {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
                 justify-content: center;
+                align-content: center;
                 gap: 8px;
-                width: 100%;
-                padding: 20px;
+                width: 50%;
+                padding: 10px 15px;
                 background: linear-gradient(135deg, var(--primary), var(--primary-dark));
                 color: white;
                 border: none;
@@ -2605,7 +2599,7 @@
                 cursor: pointer;
                 font-size: 1.2rem;
                 font-weight: 600;
-                margin: 25px 0;
+                margin: 20px 0;
                 transition: all 0.3s ease;
                 box-shadow: 0 6px 20px rgba(67, 97, 238, 0.3);
             }
@@ -2769,7 +2763,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
+                /* background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7)); */
                 opacity: 0;
                 transition: opacity 0.3s ease;
                 border-radius: 10px;
