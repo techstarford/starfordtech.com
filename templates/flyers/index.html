@@ -651,7 +651,6 @@
             <div class="footer-container">
                 <div class="footer-col">
                     <h3>Starford Tech Graphics</h3>
-                    <!-- <p style="color: #bbb; margin-bottom: 20px;">Transforming ideas into visually stunning designs that communicate, engage, and inspire.</p> -->
                     <p>Creating beautiful, professional design templates to help businesses and individuals stand out in the digital world.</p>
                     <div class="social-links">
                         <a href="https://www.youtube.com/@starford.tech7?si=HWkrNYW90Py6QAel" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -748,7 +747,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
-    <script>
+    <!-- <script>
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
@@ -1059,7 +1058,7 @@
  
 
 
-    <!-- Custom JavaScript -->
+    //-- Custom JavaScript --
  
        
 
@@ -1864,6 +1863,856 @@
 
         window.addEventListener('resize', handleResize);
         handleResize(); // Initial call
+    </script> -->
+
+    <script>
+        // ======================
+// DOM CONTENT LOADED
+// ======================
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+    
+    // ======================
+    // NAVIGATION
+    // ======================
+    const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const overlay = document.getElementById('overlay');
+    
+    // Mobile Navigation Toggle
+    mobileNavToggle.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', !isExpanded);
+            mobileNav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+    });
+    
+    // Close mobile menu when clicking on overlay
+    overlay.addEventListener('click', () => {
+        mobileNavToggle.forEach(toggle => {
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    });
+    
+    // Mobile dropdown toggle
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    mobileDropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const dropdown = toggle.nextElementSibling;
+            const icon = toggle.querySelector('i');
+            
+            dropdown.classList.toggle('active');
+            if (dropdown.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    });
+
+    // Desktop dropdown functionality
+    const desktopDropdowns = document.querySelectorAll('.nav-links > li.dropdown');
+    
+    desktopDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('mouseenter', () => {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.style.opacity = '1';
+                menu.style.visibility = 'visible';
+                menu.style.transform = 'translateY(0)';
+            }
+        });
+        
+        dropdown.addEventListener('mouseleave', () => {
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(10px)';
+            }
+        });
+    });
+    
+    // Nested dropdown functionality for Portfolio submenus
+    const dropdownItems = document.querySelectorAll('.dropdown-menu > li');
+    
+    dropdownItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const submenu = item.querySelector('.dropdown-side');
+            if (submenu) {
+                submenu.style.opacity = '1';
+                submenu.style.visibility = 'visible';
+                submenu.style.transform = 'translateX(0)';
+            }
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            const submenu = item.querySelector('.dropdown-side');
+            if (submenu) {
+                submenu.style.opacity = '0';
+                submenu.style.visibility = 'hidden';
+                submenu.style.transform = 'translateX(10px)';
+            }
+        });
+    });
+    
+    // ======================
+    // BACK TO TOP
+    // ======================
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+    
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // ======================
+    // NEWSLETTER FORM
+    // ======================
+    const newsletterForm = document.getElementById('newsletterForm');
+    
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            
+            // Here you would typically send the email to your server
+            alert(`Thank you for subscribing with ${email}! You'll receive our next design newsletter.`);
+            newsletterForm.reset();
+        });
+    }
+    
+    // ======================
+    // STICKY HEADER
+    // ======================
+    const header = document.getElementById('header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            header.style.height = '70px';
+        } else {
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            header.style.height = '80px';
+        }
+    });
+    
+    // ======================
+    // SEARCH FUNCTIONALITY
+    // ======================
+    const searchBox = document.querySelector('.search-box input');
+    
+    if (searchBox) {
+        searchBox.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                alert(`Searching for design: ${searchBox.value}`);
+                // In a real implementation, this would redirect to search results
+            }
+        });
+    }
+    
+    // ======================
+    // FLYER DATA
+    // ======================
+    const flyers = {
+        1: {
+            title: "Modern Corporate Flyer",
+            subtitle: "Professional business promotion with clean layout",
+            description: "This modern corporate flyer template features a clean, professional design perfect for business promotions, corporate announcements, and professional services marketing. The layout includes strategically placed sections for headlines, subheadings, body text, and contact information.",
+            imageUrl: "../../assets/images/flyers/more/Corporate flyer design.jpg",
+            category: "Business",
+            price: 12.99,
+            free: false,
+            fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 2345,
+            likes: 842,
+            lastUpdated: "2024-01-15",
+            colors: ["#2C3E50", "#3498DB", "#ECF0F1", "#E74C3C", "#2ECC71"],
+            colorNames: ["Midnight Blue", "Peter River", "Clouds", "Alizarin", "Emerald"],
+            tags: ["business", "corporate", "professional", "modern", "clean", "minimal"]
+        },
+        2: {
+            title: "Music Concert Flyer",
+            subtitle: "Vibrant design for concerts and nightlife events",
+            description: "Eye-catching music concert flyer with vibrant colors and dynamic typography perfect for promoting concerts, DJ nights, festivals, and music events. The design features bold elements that capture the energy of live music performances.",
+            imageUrl: "../../assets/images/flyers/more/music-event-flyer-design.jpeg",
+            category: "Events",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "PDF", "PNG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 8742,
+            likes: 3215,
+            lastUpdated: "2024-01-10",
+            colors: ["#8E44AD", "#3498DB", "#F1C40F", "#E74C3C", "#2C3E50"],
+            colorNames: ["Wisteria", "Peter River", "Sun Flower", "Alizarin", "Midnight Blue"],
+            tags: ["music", "concert", "event", "party", "festival", "vibrant"]
+        },
+        3: {
+            title: "Real Estate Listing",
+            subtitle: "Property showcase with photo highlights",
+            description: "Professional real estate flyer template designed to showcase properties effectively. Features large image areas, property details section, agent information, and call-to-action buttons.",
+            imageUrl: "../../assets/images/flyers/real-estate-flyer-design.jpeg",
+            category: "Real Estate",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG", "INDD"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Landscape",
+            downloadCount: 1876,
+            likes: 654,
+            lastUpdated: "2024-01-12",
+            colors: ["#1ABC9C", "#16A085", "#F39C12", "#34495E", "#ECF0F1"],
+            colorNames: ["Turquoise", "Green Sea", "Orange", "Wet Asphalt", "Clouds"],
+            tags: ["real estate", "property", "listing", "house", "architecture", "professional"]
+        },
+        4: {
+            title: "Restaurant Specials",
+            subtitle: "Appetizing design for food promotions",
+            description: "Appetizing restaurant flyer template designed to showcase menu specials, promotions, and events. Features food photography placeholders, menu sections, and appetizing color schemes.",
+            imageUrl: "../../assets/images/flyers/more/Restaurant opening invite flyer.jpg",
+            category: "Restaurant",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "AI", "PDF", "PNG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Square",
+            downloadCount: 6543,
+            likes: 2310,
+            lastUpdated: "2024-01-08",
+            colors: ["#E74C3C", "#F39C12", "#27AE60", "#8B4513", "#F1C40F"],
+            colorNames: ["Alizarin", "Orange", "Nephritis", "Saddle Brown", "Sun Flower"],
+            tags: ["restaurant", "food", "menu", "promotion", "appetizing", "dining"]
+        },
+        5: {
+            title: "Seasonal Sale Promotion",
+            subtitle: "Retail discount announcement",
+            description: "Seasonal sale flyer template designed to promote retail discounts, clearance sales, and special promotions. Features bold discount callouts, product showcases, and clear pricing information.",
+            imageUrl: "../../assets/images/flyers/more/charity day flyer.jpg",
+            category: "Sales",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 9231,
+            likes: 4156,
+            lastUpdated: "2024-01-05",
+            colors: ["#E74C3C", "#F1C40F", "#2C3E50", "#95A5A6", "#ECF0F1"],
+            colorNames: ["Alizarin", "Sun Flower", "Midnight Blue", "Concrete", "Clouds"],
+            tags: ["sale", "discount", "retail", "promotion", "seasonal", "shopping"]
+        },
+        6: {
+            title: "Gym Membership Flyer",
+            subtitle: "Energetic design for fitness centers",
+            description: "Energetic fitness flyer template designed to promote gym memberships, fitness classes, and health services. Features dynamic layouts, fitness imagery placeholders, and motivational elements.",
+            imageUrl: "../../assets/images/flyers/more/Creative Gym Membership flyer design.jpg",
+            category: "Fitness",
+            price: 14.99,
+            free: false,
+            fileFormats: ["PSD", "AI", "PDF", "PNG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 3456,
+            likes: 1289,
+            lastUpdated: "2024-01-14",
+            colors: ["#3498DB", "#2C3E50", "#E74C3C", "#27AE60", "#F1C40F"],
+            colorNames: ["Peter River", "Midnight Blue", "Alizarin", "Nephritis", "Sun Flower"],
+            tags: ["fitness", "gym", "health", "workout", "sports", "energy"]
+        },
+        7: {
+            title: "Educational Workshop",
+            subtitle: "Informative layout for seminars",
+            description: "Educational workshop flyer template designed for seminars, training sessions, and educational events. Features clean information hierarchy, schedule layouts, and professional typography.",
+            imageUrl: "../../assets/images/flyers/more/Photoshop workshop Flyer.jpg",
+            category: "Education",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Landscape",
+            downloadCount: 4321,
+            likes: 1678,
+            lastUpdated: "2024-01-11",
+            colors: ["#2980B9", "#27AE60", "#F1C40F", "#8E44AD", "#ECF0F1"],
+            colorNames: ["Belize Hole", "Nephritis", "Sun Flower", "Wisteria", "Clouds"],
+            tags: ["education", "workshop", "seminar", "training", "learning", "professional"]
+        },
+        8: {
+            title: "Fashion Lookbook",
+            subtitle: "Stylish design for clothing brands",
+            description: "Fashion lookbook flyer template designed for clothing brands, fashion shows, and boutique promotions. Features elegant layouts, fashion photography placeholders, and sophisticated typography.",
+            imageUrl: "../../assets/images/flyers/more/fashion lookbook.jpg",
+            category: "Fashion",
+            price: 16.99,
+            free: false,
+            fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Square",
+            downloadCount: 2189,
+            likes: 876,
+            lastUpdated: "2024-01-09",
+            colors: ["#8E44AD", "#2C3E50", "#E74C3C", "#F1C40F", "#ECF0F1"],
+            colorNames: ["Wisteria", "Midnight Blue", "Alizarin", "Sun Flower", "Clouds"],
+            tags: ["fashion", "clothing", "style", "lookbook", "boutique", "elegant"]
+        },
+        9: {
+            title: "Non-Profit Charity",
+            subtitle: "Compassionate design for fundraising",
+            description: "Non-profit charity flyer template designed for fundraising events, awareness campaigns, and charitable causes. Features compassionate design elements, donation information, and event details.",
+            imageUrl: "../../assets/images/flyers/more/charity day flyer.jpg",
+            category: "Non-Profit",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 5678,
+            likes: 2345,
+            lastUpdated: "2024-01-07",
+            colors: ["#27AE60", "#3498DB", "#F1C40F", "#E74C3C", "#2C3E50"],
+            colorNames: ["Nephritis", "Peter River", "Sun Flower", "Alizarin", "Midnight Blue"],
+            tags: ["charity", "non-profit", "fundraising", "donation", "community", "help"]
+        },
+        10: {
+            title: "Product Launch Flyer",
+            subtitle: "Sleek design for new releases",
+            description: "Product launch flyer template designed for new product announcements, tech releases, and innovation showcases. Features sleek modern design, product highlight areas, and launch details.",
+            imageUrl: "../../assets/images/flyers/more/prodduct-launch-flyer-design.jpg",
+            category: "Business",
+            price: 15.99,
+            free: false,
+            fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Landscape",
+            downloadCount: 1543,
+            likes: 678,
+            lastUpdated: "2024-01-13",
+            colors: ["#3498DB", "#2C3E50", "#27AE60", "#F1C40F", "#ECF0F1"],
+            colorNames: ["Peter River", "Midnight Blue", "Nephritis", "Sun Flower", "Clouds"],
+            tags: ["product", "launch", "tech", "innovation", "release", "modern"]
+        },
+        11: {
+            title: "Team Introduction",
+            subtitle: "Showcase your team members",
+            description: "Team introduction flyer template designed to showcase team members, staff profiles, and company culture. Features team member placeholders, biography sections, and professional layouts.",
+            imageUrl: "../../assets/images/flyers/more/team-introduction-flyer.jpg",
+            category: "Business",
+            price: 0,
+            free: true,
+            fileFormats: ["PSD", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Portrait",
+            downloadCount: 3987,
+            likes: 1567,
+            lastUpdated: "2024-01-06",
+            colors: ["#3498DB", "#2C3E50", "#95A5A6", "#F1C40F", "#ECF0F1"],
+            colorNames: ["Peter River", "Midnight Blue", "Concrete", "Sun Flower", "Clouds"],
+            tags: ["team", "staff", "introduction", "company", "culture", "professional"]
+        },
+        12: {
+            title: "Wedding Invitation",
+            subtitle: "Elegant design for special occasions",
+            description: "Elegant wedding invitation flyer template designed for weddings, anniversaries, and special celebrations. Features romantic design elements, couple photography placeholders, and elegant typography.",
+            imageUrl: "../../assets/images/flyers/more/Wedding flyer design.jpg",
+            category: "Events",
+            price: 12.99,
+            free: false,
+            fileFormats: ["PSD", "AI", "PDF", "PNG", "JPG"],
+            dimensions: "8.5×11 in | 2550×3300 px",
+            orientation: "Square",
+            downloadCount: 2876,
+            likes: 1234,
+            lastUpdated: "2024-01-04",
+            colors: ["#8E44AD", "#F1C40F", "#ECF0F1", "#D7BDE2", "#2C3E50"],
+            colorNames: ["Wisteria", "Sun Flower", "Clouds", "Light Wisteria", "Midnight Blue"],
+            tags: ["wedding", "invitation", "celebration", "romantic", "elegant", "special"]
+        }
+    };
+    
+    // ======================
+    // MODAL FUNCTIONALITY
+    // ======================
+    const modal = document.getElementById('flyerModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const flyerCards = document.querySelectorAll('.project-card');
+    
+    // Modal elements
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const designCategory = document.getElementById('designCategory');
+    const fileFormat = document.getElementById('fileFormat');
+    const dimensions = document.getElementById('dimensions');
+    const downloadCount = document.getElementById('downloadCount');
+    const orientation = document.getElementById('orientation');
+    const lastUpdated = document.getElementById('lastUpdated');
+    const modalPrice = document.getElementById('modalPrice');
+    const likeBtn = document.getElementById('likeBtn');
+    const likeCount = document.getElementById('likeCount');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const favoriteBtn = document.getElementById('favoriteBtn');
+    const shareBtn = document.getElementById('shareBtn');
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const expandBtn = document.getElementById('expandBtn');
+    const previewBtn = document.getElementById('previewBtn');
+    const customizeBtn = document.getElementById('customizeBtn');
+    const purchaseBtn = document.getElementById('purchaseBtn');
+    const freeDownloadBtn = document.getElementById('freeDownloadBtn');
+    const colorPalette = document.getElementById('colorPalette');
+    const tagsContainer = document.getElementById('tagsContainer');
+    const formatBadges = document.getElementById('formatBadges');
+    
+    // Current flyer ID and state
+    let currentFlyerId = null;
+    let likedFlyers = JSON.parse(localStorage.getItem('likedFlyers')) || [];
+    let favoriteFlyers = JSON.parse(localStorage.getItem('favoriteFlyers')) || [];
+    let bookmarkedFlyers = JSON.parse(localStorage.getItem('bookmarkedFlyers')) || [];
+    
+    // Open modal with flyer data
+    function openModal(flyerId) {
+        currentFlyerId = flyerId;
+        const flyer = flyers[flyerId];
+        
+        if (!flyer) {
+            console.error('Flyer data not found for ID:', flyerId);
+            return;
+        }
+        
+        // Set basic info
+        modalImage.src = flyer.imageUrl;
+        modalImage.alt = flyer.title;
+        modalTitle.textContent = flyer.title;
+        modalSubtitle.textContent = flyer.subtitle;
+        modalDescription.textContent = flyer.description;
+        designCategory.textContent = flyer.category;
+        fileFormat.textContent = flyer.fileFormats.join(', ');
+        dimensions.textContent = flyer.dimensions;
+        downloadCount.textContent = flyer.downloadCount.toLocaleString();
+        orientation.textContent = flyer.orientation;
+        lastUpdated.textContent = flyer.lastUpdated;
+        
+        // Set price
+        if (flyer.free) {
+            modalPrice.innerHTML = '<span class="price-free">FREE</span>';
+            if (purchaseBtn) purchaseBtn.style.display = 'none';
+            if (freeDownloadBtn) freeDownloadBtn.style.display = 'block';
+        } else {
+            modalPrice.innerHTML = `<span class="price-premium">$${flyer.price.toFixed(2)}</span>`;
+            if (purchaseBtn) purchaseBtn.style.display = 'block';
+            if (freeDownloadBtn) freeDownloadBtn.style.display = 'none';
+        }
+        
+        // Set button states
+        updateButtonStates(flyerId);
+        
+        // Set file format badges
+        if (formatBadges) {
+            formatBadges.innerHTML = '';
+            flyer.fileFormats.forEach(format => {
+                const badge = document.createElement('span');
+                badge.className = 'format-badge';
+                badge.textContent = format;
+                formatBadges.appendChild(badge);
+            });
+        }
+        
+        // Set color palette
+        if (colorPalette) {
+            colorPalette.innerHTML = '';
+            flyer.colors.forEach((color, index) => {
+                const colorElement = document.createElement('div');
+                colorElement.className = 'color';
+                colorElement.style.backgroundColor = color;
+                colorElement.title = `${flyer.colorNames[index]} ${color}`;
+                colorPalette.appendChild(colorElement);
+            });
+        }
+        
+        // Set tags
+        if (tagsContainer) {
+            tagsContainer.innerHTML = '';
+            flyer.tags.forEach(tag => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+                tagsContainer.appendChild(tagElement);
+            });
+        }
+        
+        // Show modal
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Add click outside to close
+        setTimeout(() => {
+            modal.addEventListener('click', closeModalOutside);
+        }, 10);
+    }
+    
+    // Close modal when clicking outside
+    function closeModalOutside(e) {
+        if (e.target === modal) {
+            closeModalFunc();
+        }
+    }
+    
+    // Update button states based on localStorage
+    function updateButtonStates(flyerId) {
+        // Like button
+        if (likeBtn && likeCount) {
+            if (likedFlyers.includes(flyerId)) {
+                likeBtn.classList.add('active');
+                likeCount.textContent = flyers[flyerId].likes + 1;
+            } else {
+                likeBtn.classList.remove('active');
+                likeCount.textContent = flyers[flyerId].likes;
+            }
+        }
+        
+        // Favorite button
+        if (favoriteBtn) {
+            if (favoriteFlyers.includes(flyerId)) {
+                favoriteBtn.classList.add('active');
+            } else {
+                favoriteBtn.classList.remove('active');
+            }
+        }
+        
+        // Bookmark button
+        if (bookmarkBtn) {
+            if (bookmarkedFlyers.includes(flyerId)) {
+                bookmarkBtn.classList.add('active');
+            } else {
+                bookmarkBtn.classList.remove('active');
+            }
+        }
+    }
+    
+    // Close modal
+    function closeModalFunc() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        modal.removeEventListener('click', closeModalOutside);
+    }
+    
+    // Event Listeners for modals
+    flyerCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const flyerId = card.getAttribute('data-project');
+            openModal(flyerId);
+        });
+    });
+    
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModalFunc);
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModalFunc();
+        }
+    });
+    
+    // Like button functionality
+    if (likeBtn) {
+        likeBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            
+            if (likedFlyers.includes(currentFlyerId)) {
+                // Unlike
+                likedFlyers = likedFlyers.filter(id => id !== currentFlyerId);
+                likeBtn.classList.remove('active');
+                if (likeCount) likeCount.textContent = flyers[currentFlyerId].likes;
+            } else {
+                // Like
+                likedFlyers.push(currentFlyerId);
+                likeBtn.classList.add('active');
+                if (likeCount) likeCount.textContent = flyers[currentFlyerId].likes + 1;
+            }
+            localStorage.setItem('likedFlyers', JSON.stringify(likedFlyers));
+        });
+    }
+    
+    // Favorite button functionality
+    if (favoriteBtn) {
+        favoriteBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            
+            if (favoriteFlyers.includes(currentFlyerId)) {
+                favoriteFlyers = favoriteFlyers.filter(id => id !== currentFlyerId);
+                favoriteBtn.classList.remove('active');
+            } else {
+                favoriteFlyers.push(currentFlyerId);
+                favoriteBtn.classList.add('active');
+            }
+            localStorage.setItem('favoriteFlyers', JSON.stringify(favoriteFlyers));
+        });
+    }
+    
+    // Bookmark button functionality
+    if (bookmarkBtn) {
+        bookmarkBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            
+            if (bookmarkedFlyers.includes(currentFlyerId)) {
+                bookmarkedFlyers = bookmarkedFlyers.filter(id => id !== currentFlyerId);
+                bookmarkBtn.classList.remove('active');
+            } else {
+                bookmarkedFlyers.push(currentFlyerId);
+                bookmarkBtn.classList.add('active');
+            }
+            localStorage.setItem('bookmarkedFlyers', JSON.stringify(bookmarkedFlyers));
+        });
+    }
+    
+    // Download button functionality
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            const flyer = flyers[currentFlyerId];
+            
+            if (flyer.free) {
+                alert(`Downloading free template: ${flyer.title}`);
+                // In a real app, this would trigger a file download
+                flyer.downloadCount++;
+                if (downloadCount) downloadCount.textContent = flyer.downloadCount.toLocaleString();
+            } else {
+                alert(`Redirecting to purchase page for: ${flyer.title}`);
+            }
+        });
+    }
+    
+    // Expand button functionality
+    if (expandBtn) {
+        expandBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            window.open(flyers[currentFlyerId].imageUrl, '_blank');
+        });
+    }
+    
+    // Share button functionality
+    if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            const flyer = flyers[currentFlyerId];
+            const shareData = {
+                title: flyer.title,
+                text: `Check out this ${flyer.category} flyer template: ${flyer.subtitle}`,
+                url: window.location.href
+            };
+            
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .then(() => console.log('Shared successfully'))
+                    .catch(err => console.log('Error sharing:', err));
+            } else {
+                // Fallback: Copy to clipboard
+                navigator.clipboard.writeText(shareData.text).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+            }
+        });
+    }
+    
+    // Preview button
+    if (previewBtn) {
+        previewBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            window.open(flyers[currentFlyerId].imageUrl, '_blank');
+        });
+    }
+    
+    // Customize button
+    if (customizeBtn) {
+        customizeBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            alert(`Opening online editor for: ${flyers[currentFlyerId].title}`);
+        });
+    }
+    
+    // Purchase button
+    if (purchaseBtn) {
+        purchaseBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            const flyer = flyers[currentFlyerId];
+            alert(`Adding to cart: ${flyer.title} - $${flyer.price}`);
+        });
+    }
+    
+    // Free download button
+    if (freeDownloadBtn) {
+        freeDownloadBtn.addEventListener('click', () => {
+            if (!currentFlyerId) return;
+            const flyer = flyers[currentFlyerId];
+            alert(`Downloading free template: ${flyer.title}`);
+            flyer.downloadCount++;
+            if (downloadCount) downloadCount.textContent = flyer.downloadCount.toLocaleString();
+        });
+    }
+    
+    // ======================
+    // FILTER FUNCTIONALITY
+    // ======================
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterSelects = document.querySelectorAll('.filter-select');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    
+    // Filter flyers
+    function filterFlyers() {
+        const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+        const category = document.getElementById('categoryFilter')?.value || 'all';
+        const price = document.getElementById('priceFilter')?.value || 'all';
+        const orientation = document.getElementById('orientationFilter')?.value || 'all';
+        
+        flyerCards.forEach(card => {
+            const cardCategories = card.getAttribute('data-category').split(' ');
+            const cardPrice = card.getAttribute('data-price');
+            const cardOrientation = card.getAttribute('data-orientation');
+            
+            let show = true;
+            
+            // Apply quick filter
+            if (activeFilter !== 'all' && !cardCategories.includes(activeFilter)) {
+                show = false;
+            }
+            
+            // Apply category filter
+            if (category !== 'all' && !cardCategories.includes(category)) {
+                show = false;
+            }
+            
+            // Apply price filter
+            if (price !== 'all' && cardPrice !== price) {
+                show = false;
+            }
+            
+            // Apply orientation filter
+            if (orientation !== 'all' && cardOrientation !== orientation) {
+                show = false;
+            }
+            
+            card.style.display = show ? 'block' : 'none';
+        });
+    }
+    
+    // Filter button functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+            // Filter flyers
+            filterFlyers();
+        });
+    });
+    
+    // Filter select functionality
+    filterSelects.forEach(select => {
+        select.addEventListener('change', () => {
+            filterFlyers();
+        });
+    });
+    
+    // Load more functionality
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            // In a real app, this would load more flyers from the server
+            loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            loadMoreBtn.disabled = true;
+            
+            setTimeout(() => {
+                loadMoreBtn.innerHTML = '<i class="fas fa-plus"></i> Load More Flyers';
+                loadMoreBtn.disabled = false;
+                alert('More flyers would be loaded in a real application!');
+            }, 1500);
+        });
+    }
+    
+    // ======================
+    // ADDITIONAL FEATURES
+    // ======================
+    
+    // Scroll Progress Indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + '%';
+    });
+    
+    // Add progress bar styles
+    const progressStyle = document.createElement('style');
+    progressStyle.textContent = `
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            z-index: 9998;
+            width: 0%;
+            transition: width 0.1s;
+        }
+    `;
+    document.head.appendChild(progressStyle);
+    
+    // Responsive adjustments for modal
+    function handleResize() {
+        // Adjust modal for mobile
+        if (window.innerWidth <= 768) {
+            const modalContent = document.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.margin = '10px';
+                modalContent.style.maxHeight = '90vh';
+                modalContent.style.overflowY = 'auto';
+            }
+        }
+    }
+    
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call
+    
+    // Initialize filter on page load
+    filterFlyers();
+});
     </script>
 
 </body>
